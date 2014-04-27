@@ -9,6 +9,11 @@
     <%= f.input :email, required: true %>
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>
+    
+    <% if current_admin? %>
+      <%= f.input :admin %>
+    <% end %>
+
   </div>
 
   <div class="form-actions">

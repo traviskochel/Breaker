@@ -37,16 +37,16 @@ ul, ol {
 
   &.ruled {
     padding: 0;
-    border-top: 1px solid $color-neutral-lt;
+    border-top: 1px solid $color-gray-8;
 
     li {
 
       padding: 1em 0; 
-      border-bottom: 1px solid $color-neutral-lt;
+      border-bottom: 1px solid $color-gray-8;
       list-style: none;
       
       &:hover.highlight-hover {
-        background-color: $color-accent-lt3;
+        background-color: $color-yellow;
       }
 
       &.last{
@@ -105,15 +105,15 @@ section, .section {
   margin-bottom: 1.75em;
   
   &.border {
-    border-top: 3px solid $color-neutral-lt;
+    border-top: 3px solid $color-gray-8;
     
     &.compact {
-      border-top: 1px solid $color-neutral-lt;
+      border-top: 1px solid $color-gray-8;
     }
   }
 
   &.border-thin {
-    border-top: 1px solid $color-neutral-lt;
+    border-top: 1px solid $color-gray-8;
   }
 
 

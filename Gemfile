@@ -4,10 +4,10 @@ ruby '2.0.0'
 gem 'rails', '4.1.0'
 
 gem 'pg'
-gem "sass"
-gem 'sass-rails'
-gem "compass"
-gem "compass-rails"
+gem "sass", '3.2.14'
+gem 'sass-rails', '4.0.2'
+gem "compass", '0.12.2'
+gem "compass-rails", '1.1.7'
 gem 'compass-normalize'
 gem 'animation'
 gem "font-awesome-rails"

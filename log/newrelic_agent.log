@@ -648,3 +648,100 @@
 [04/27/14 15:17:56 -0700 Salo.local (14784)] INFO : Doing deferred dependency-detection before Rack startup
 [04/27/14 15:18:00 -0700 Salo.local (14784)] ERROR : Invalid license key, please contact support@newrelic.com
 [04/27/14 15:18:00 -0700 Salo.local (14784)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[04/27/14 15:23:43 -0700 Salo.local (14784)] INFO : Starting Agent shutdown
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Starting the New Relic agent in "development" environment.
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Reading configuration from 
+[04/27/14 15:23:48 -0700 Salo.local (14966)] ERROR : Unable to read configuration file : Is a directory - /Users/traviskochel/github/Breaker
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Enabling the Request Sampler.
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Environment: development
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : No known dispatcher detected.
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Application: development
+[04/27/14 15:23:48 -0700 Salo.local (14966)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Installing ActiveRecord 4 instrumentation
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Installing middleware-based Excon instrumentation
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Installing Net instrumentation
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Installing deferred Rack instrumentation
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Installing Rails 4 Controller instrumentation
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Installing Rails 4 view instrumentation
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Installing Rails4 Error instrumentation
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Finished instrumentation
+[04/27/14 15:23:48 -0700 Salo.local (14966)] INFO : Doing deferred dependency-detection before Rack startup
+[04/27/14 15:24:48 -0700 Salo.local (14966)] ERROR : Invalid license key, please contact support@newrelic.com
+[04/27/14 15:24:48 -0700 Salo.local (14966)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Starting the New Relic agent in "development" environment.
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Reading configuration from 
+[04/27/14 15:31:38 -0700 Salo.local (15084)] ERROR : Unable to read configuration file : Is a directory - /Users/traviskochel/github/Breaker
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Enabling the Request Sampler.
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Environment: development
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : No known dispatcher detected.
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Application: development
+[04/27/14 15:31:38 -0700 Salo.local (15084)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Installing ActiveRecord 4 instrumentation
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Installing middleware-based Excon instrumentation
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Installing Net instrumentation
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Installing deferred Rack instrumentation
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Installing Rails 4 Controller instrumentation
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Installing Rails 4 view instrumentation
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Installing Rails4 Error instrumentation
+[04/27/14 15:31:38 -0700 Salo.local (15084)] INFO : Finished instrumentation
+[04/27/14 15:31:52 -0700 Salo.local (14966)] INFO : Starting Agent shutdown
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Starting the New Relic agent in "development" environment.
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Reading configuration from 
+[04/27/14 15:31:56 -0700 Salo.local (15091)] ERROR : Unable to read configuration file : Is a directory - /Users/traviskochel/github/Breaker
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Enabling the Request Sampler.
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Environment: development
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : No known dispatcher detected.
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Application: development
+[04/27/14 15:31:56 -0700 Salo.local (15091)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Installing ActiveRecord 4 instrumentation
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Installing middleware-based Excon instrumentation
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Installing Net instrumentation
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Installing deferred Rack instrumentation
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Installing Rails 4 Controller instrumentation
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Installing Rails 4 view instrumentation
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Installing Rails4 Error instrumentation
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Finished instrumentation
+[04/27/14 15:31:56 -0700 Salo.local (15091)] INFO : Doing deferred dependency-detection before Rack startup
+[04/27/14 15:32:02 -0700 Salo.local (15091)] ERROR : Invalid license key, please contact support@newrelic.com
+[04/27/14 15:32:02 -0700 Salo.local (15091)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Starting the New Relic agent in "development" environment.
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Reading configuration from 
+[04/27/14 15:32:21 -0700 Salo.local (15103)] ERROR : Unable to read configuration file : Is a directory - /Users/traviskochel/github/Breaker
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Enabling the Request Sampler.
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Environment: development
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : No known dispatcher detected.
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Application: development
+[04/27/14 15:32:21 -0700 Salo.local (15103)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Installing ActiveRecord 4 instrumentation
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Installing middleware-based Excon instrumentation
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Installing Net instrumentation
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Installing deferred Rack instrumentation
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Installing Rails 4 Controller instrumentation
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Installing Rails 4 view instrumentation
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Installing Rails4 Error instrumentation
+[04/27/14 15:32:21 -0700 Salo.local (15103)] INFO : Finished instrumentation
+[04/27/14 15:32:22 -0700 Salo.local (15091)] INFO : Starting Agent shutdown
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Starting the New Relic agent in "development" environment.
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Reading configuration from 
+[04/27/14 15:32:26 -0700 Salo.local (15107)] ERROR : Unable to read configuration file : Is a directory - /Users/traviskochel/github/Breaker
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Enabling the Request Sampler.
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Environment: development
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : No known dispatcher detected.
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Application: development
+[04/27/14 15:32:26 -0700 Salo.local (15107)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Installing ActiveRecord 4 instrumentation
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Installing middleware-based Excon instrumentation
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Installing Net instrumentation
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Installing deferred Rack instrumentation
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Installing Rails 4 Controller instrumentation
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Installing Rails 4 view instrumentation
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Installing Rails4 Error instrumentation
+[04/27/14 15:32:26 -0700 Salo.local (15107)] INFO : Finished instrumentation
+[04/27/14 15:32:27 -0700 Salo.local (15107)] INFO : Doing deferred dependency-detection before Rack startup
+[04/27/14 15:32:33 -0700 Salo.local (15107)] ERROR : Invalid license key, please contact support@newrelic.com
+[04/27/14 15:32:33 -0700 Salo.local (15107)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.

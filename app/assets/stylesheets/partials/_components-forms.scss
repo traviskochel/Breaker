@@ -112,9 +112,6 @@ input[type="file"] {
 }
 
 label {
-  font-family: $font-sans;
-  text-transform: uppercase;
-  font-size: 1.3em;
   letter-spacing: .06em;
   display: block;
   line-height: 1.3em;
@@ -141,7 +138,6 @@ label {
 }
 
 .char-countdown-counter {
-  font-family: $font-sans;
   text-transform: uppercase;
   font-size: 1em;
   letter-spacing: .04em;

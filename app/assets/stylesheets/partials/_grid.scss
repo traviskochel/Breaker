@@ -1,0 +1,118 @@
+// grid layouts
+
+// usage and info about the grid
+// We're using a 14 column grid, but for 99% of the time it's all containted in a 12 column wrapper indented by 1 column. Just know that we have the option to use those first and last columns.
+
+//--------
+// BASICS
+// .grid-6 --> spans 6 columns. Works with values of 1-12.
+// .last --> use this to mark the last column in a row
+// .first --> gives a clear:both; if needed. Can also use .clear-both
+
+// NESTING
+// .grid-4.nest-8 --> 4 column element within the context of an 8 column parent. This preserves margins and context rather than dividing the parent into another 12 column grid. 
+
+// BREAKING (every x columns)
+// .grid-3.break-2 --> clears (adds class of last) to every 2 columns. Works with values of 2-12. Can be combined with nest as well. Use this if there's a bunch of blocks stacked next to each other, where it's not easy manually add a class of last.
+
+
+
+
+//general grid blocks
+
+@mixin base-grid($i) {
+  @include grid-cols($i);
+  
+  //give context to nested grids
+  @for $x from ($i + 1) through 12 {
+    &.nest-#{$x} { 
+      @include grid-nest-cols($i, $x);
+    
+      &.last {
+        margin-right: 0; 
+        float: left;
+      }
+
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .grid-#{$i} {
+    @include base-grid($i);
+  }
+
+  .grid-#{$i} .account-nav{
+    margin-right: 2.5em;
+  }
+}
+
+
+//clear child columns every nth
+@mixin break-grid($i) {
+  &:nth-of-type(#{$i}n) {
+    margin-right: 0; 
+    float: left;
+  }
+  &:nth-of-type(#{$i}n + 1) {
+    clear:both;
+  }
+}
+
+@for $i from 2 through 12 {
+  .break-#{$i} {
+    @include break-grid($i);
+  }
+}
+
+
+//split child elements into grid
+@for $container-cols from 2 through 12 {
+  
+  //split into
+  @for $split-into from 2 through 12 {
+    
+    @if $container-cols % $split-into == 0 {
+      $num-cols: $container-cols / $split-into;
+
+      .split-#{$container-cols}-into-#{$split-into} {
+        @extend .clearfix;
+        
+        .split {
+          @include grid-nest-cols($num-cols, $container-cols);
+
+          &:nth-of-type(#{$split-into}n) {
+            @extend .last;
+          }
+          &:nth-of-type(#{$split-into}n + 1) {
+            @extend .first;
+          }
+        }
+
+      }
+    
+    }
+  
+  }
+
+}
+
+
+.grid-centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+.row {
+  @extend .clearfix;
+  clear:both;
+}
+
+
+
+.first {clear:both;}
+.last {
+  margin-right: 0; 
+  float: left;
+}

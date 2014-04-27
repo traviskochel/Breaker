@@ -1,0 +1,108 @@
+//functions: imports, functions and variables for Compass and SASS.
+//imports
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/transition";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/columns";
+@import "compass/css3/transform";
+@import "animation";
+@import "normalize";
+@import "singularitygs";
+@import "breakpoint";
+@import "s3_direct_upload_progress_bars";
+@import "font-awesome";
+
+
+
+//colors
+$color-main: #404040;
+
+$color-super-dark: #222;
+$color-dark-gray: #404040;
+$color-med-gray: #8A8A8A;
+$color-light-gray: #EFEFEF;
+$color-lighter-gray: #f7f7f7;
+
+$color-dark: $color-dark-gray;
+$color-light: #fff;
+
+
+//grays between dark med and light
+$color-gray-1: $color-dark-gray;
+$color-gray-2: mix($color-med-gray, $color-dark-gray, 25%);
+$color-gray-3: mix($color-med-gray, $color-dark-gray, 50%);
+$color-gray-4: mix($color-med-gray, $color-dark-gray, 75%);
+$color-gray-5:$color-med-gray;
+$color-gray-6: mix($color-light-gray, $color-med-gray, 25%);
+$color-gray-7: mix($color-light-gray, $color-med-gray, 50%);
+$color-gray-8: mix($color-light-gray, $color-med-gray, 75%);
+$color-gray-9: mix($color-light-gray, $color-med-gray, 90%);
+$color-gray-10: $color-light-gray;
+
+$color-yellow:#FFDA39;
+$color-text-yellow: mix($color-yellow, $color-dark-gray, 92%);
+
+//$color-yellow-dark: darken($color-yellow, 12%);
+$color-yellow-dark: #ffe954;
+//$color-yellow-darker: darken($color-yellow, 15%);
+$color-yellow-darker: darken($color-yellow, 12%);
+$color-yellow-lt: lighten($color-yellow, 10%);
+$color-yellow-lt2: lighten($color-yellow, 20%);
+
+//secondary colors
+$color-red: #E74C3C;
+$color-red-dark: darken($color-red, 8%);
+$color-red-darker: darken($color-red, 13%);
+$color-red-lt: lighten($color-red, 10%);
+$color-red-lt2: lighten($color-red, 20%);
+$color-danger: $color-red;
+$color-danger-lt: lighten($color-danger, 43%);
+
+$color-blue: #3493DB;
+$color-blue-dark: darken($color-blue, 10%);
+$color-blue-darker: darken($color-blue, 15%);
+$color-blue-lt: lighten($color-blue, 10%);
+$color-blue-lt2: lighten($color-blue, 20%);
+
+$color-green: #2ECC71;
+$color-green-dark: darken($color-green, 10%);
+$color-green-darker: darken($color-green, 15%);
+$color-green-lt: lighten($color-green, 10%);
+$color-green-lt2: lighten($color-green, 20%); 
+
+//type stuff
+$font-serif: "Georgia", serif;
+$font-sans: "Verdana", "Helvetica", sans-serif;
+
+
+//compass variables
+$default-box-shadow-color: rgba($color-dark, .2);
+$default-box-shadow-blur: 15px;
+
+//media query values
+$media-xxs: 425px;
+$media-xs: 600px;
+$media-sm: 800px; 
+$media-md: 1000px; 
+$media-lg: 1332px;
+$media-xl: 1600px;
+$media-xxl: 1900px;
+
+//grid stuff
+$grids: 14;
+$gutters: .25;
+
+@mixin grid-cols($col-num, $col-pos: '') {
+  @include layout(12) {
+    @include float-span($col-num, $col-pos);
+  }
+}
+@mixin grid-nest-cols($col-num, $col-context, $col-pos: '') {
+  @include layout($col-context) {
+    @include float-span($col-num, $col-pos);
+  }
+}
+
+
+

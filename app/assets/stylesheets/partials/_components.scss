@@ -1,0 +1,307 @@
+//components: global, reusable modules (blocks) used site-wide. 
+
+.btn {
+  @include box-sizing(border-box);
+  @include border-radius(3px);
+  @include inline-block;
+  width: auto;
+  padding: .5em .8em;
+  font-family: $font-sans;
+  font-size: 1em;
+  letter-spacing: 1.5px;
+  line-height: 1em;
+  text-transform: uppercase;
+
+  &.big{
+    font-size: 1.5em;
+  }
+
+  &.wide{
+    padding: .5em 1.8em;
+  }
+
+  &.small {
+    font-size: .8em;
+  }
+  &.x-small {
+    font-size: .7em;
+  }
+
+  &.oval {
+    @include border-radius(100px);
+  }
+
+  &.more {
+    margin-left: 1em;
+  }
+
+}
+
+.table {
+  width: 100%;
+  thead, tbody {
+    th, td {
+      padding: 1em .75em;
+      border-top: 1px solid $color-neutral-lt;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        background-color: $color-light-gray;
+      }
+    }  
+  }
+}
+
+
+.dropdown-parent {
+  @include inline-block;
+  position: relative;
+
+  .btn {
+    white-space: nowrap;
+  }
+
+  .dropdown {
+    @include border-radius(3px);
+    @include box-shadow;
+    @extend .no-bullets;
+
+    
+    right: 0;
+    margin: 0;
+    padding: 1em 1em 1em 0.75em;
+    display: none;
+    position: absolute;
+    width: 10em;
+    background-color: $color-light;
+    font-size: .75em;
+    z-index: 100;
+
+   
+
+    &.one-line {
+     width: 15em;
+    }
+
+    &.offset {
+      margin-top: 1em;
+    }
+
+    &.centered {
+      left: -70%;
+    }
+
+    li{
+      padding:0;
+
+      a {
+        display: block;      
+        padding: .2em 0;
+        color: $color-med-gray;
+
+        &:hover{
+          color: $color-dark;
+        }
+
+        &:active{
+          color: $color-super-dark;
+        }
+      }    
+    }
+  }
+
+  &:hover {
+
+    .dropdown {
+      display: block;
+
+      &.click {
+        display: none;
+      }
+
+    }
+  }
+
+  &.active, &:hover.active {
+
+    .dropdown.click {
+      display: block;
+    }
+  }
+
+  &.quad-4 .dropdown{
+    bottom: 130%;
+  }
+
+}
+
+.growler {
+  @include border-radius(3px);
+  @include box-shadow;
+  max-width: 15em;
+  position:fixed;
+  bottom:1em;
+  right:1em;
+  display: none;
+  font-family: $font-serif;
+  letter-spacing: 0px;
+  text-transform: initial;
+  line-height: 1.2em;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.circle-nav {
+  text-align: center; 
+  margin-bottom: 1.25em;
+  font-size: 1.3em;
+}
+
+//------------------------------------------
+// modals (popups)
+//------------------------------------------
+
+#modal-wrap {
+  @include box-sizing(border-box);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  background-color: rgba($color-dark, 0.8);
+  overflow-y: scroll;
+  z-index: 1000;
+
+
+  &.active {
+    display: block;
+  }
+
+  .close-modal {
+    font-size: 1.75em;
+    line-height: 1em;
+
+    &.full {
+      position: fixed;
+      top:0;
+      left:0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-indent: -999999px;
+      z-index: 5;
+    }
+  }
+
+  .align-middle {
+    z-index: 10;
+  }
+
+  #modal {
+    position: relative;
+    z-index: 10;
+    background-color: $color-light;
+    @include border-radius(6px);
+
+    &.color-reversed {
+      background-color: $color-dark;
+    }
+
+    &.no-min-height{
+      #modal-content {
+        min-height: 0;
+        //padding-bottom: 3.5em;
+      }
+    }
+
+    
+    #modal-content {
+      margin-left: auto;
+      margin-right: auto;
+      float:none;
+      padding: 3em 0 ;
+    }
+  }
+
+  .modal-monogram {
+    height: 5em;
+    margin-bottom: 1.5em;
+  }
+}
+
+//------------------------------------------
+// tooltips
+//------------------------------------------
+
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
+.ui-tooltip {  
+  position: absolute;
+  z-index:2010; 
+  color:$color-dark; 
+  font-size:0.75em; 
+   
+  .ui-tooltip-content {
+    @include box-shadow;
+    @include border-radius(4px); 
+    background-color: $color-light;
+    //border: 1px solid $color-dark;
+    padding:.5em .7em;
+  }
+
+  .tooltip-arrow {
+    width: 66px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -33px;
+    
+    &:after {
+      @include box-shadow;
+      @include rotate(45deg);
+      background-color: $color-light;
+      //border: 1px solid $color-dark;
+      content: "";
+      position: absolute;
+      left: 20px;
+      width: 23px;
+      height: 23px;
+    }
+
+    &.top {
+      top: -15px;
+
+      &:after {
+        bottom: -20px;
+      }
+    }
+
+    &.bottom {
+      bottom: -15px;
+
+      &:after {
+        top: -20px;
+      }
+    }
+  }
+
+  &.dark-tooltip {
+    color: $color-light;
+
+    .ui-tooltip-content, .tooltip-arrow:after  {
+      background-color: $color-dark;
+      border: 1px solid $color-gray-3;
+    }
+  }
+}

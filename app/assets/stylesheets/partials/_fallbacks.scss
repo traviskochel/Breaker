@@ -1,0 +1,9 @@
+//browser-specific or feature-specific styles
+
+
+//need to modernize and show this
+.drag-and-drop-fallback, .click-to-open-files-fallback {
+	display: none;
+}
+
+//going to need a modernizr check for 'transform' used in .align-middle

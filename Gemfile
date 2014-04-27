@@ -4,9 +4,19 @@ ruby '2.0.0'
 gem 'rails', '4.1.0'
 
 gem 'pg'
-gem 'sass-rails', '~> 4.0.3'
+gem "sass"
+gem 'sass-rails'
+gem "compass"
 gem "compass-rails"
+gem 'compass-normalize'
+gem 'animation'
 gem "font-awesome-rails"
+gem 'breakpoint'
+gem 'singularitygs'
+gem 'singularity-extras'
+
+
+gem 'jquery-ui-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -22,6 +32,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'cancancan'
+gem 'devise'
 
 gem 'carrierwave', :git => 'git://github.com/carrierwaveuploader/carrierwave.git'
 

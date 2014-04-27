@@ -1,0 +1,78 @@
+//typography: global typographic system, including granular modifiers that can be chained together to extend the visual language (ex: p.loud.balanced)
+
+
+body {
+  font-family: $font-serif;
+  font-size: 60%;
+  line-height: 1.45;
+  
+  @include breakpoint($media-xs) {
+    font-size: 70%;
+  }
+  @include breakpoint($media-sm) {
+    font-size: 80%;
+  }
+  @include breakpoint($media-md) {
+    font-size: 90%;
+  }
+  @include breakpoint($media-lg) {
+    font-size: 100%;
+  }
+  @include breakpoint($media-xl) {
+    font-size: 115%;
+  }
+  @include breakpoint($media-xxl) {
+    font-size: 130%;
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight:bold; 
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {font-size: 3.75em; margin-top: 0; margin-bottom: .75em; line-height: 1.1em; }
+h2 {font-size: 3em; margin-bottom: .75em;}
+h3 {font-size: 2.25em; margin-top:0; margin-bottom: .5em;} 
+h4 {font-family: $font-sans; font-size: 2.5em; text-transform: uppercase; letter-spacing:.05em;}
+h5 {font-size: 1.75em; margin-bottom: .5em; }
+h6 {font-size: 1.5em; margin-bottom: .25em; }
+
+p {
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+
+.font-big {
+  font-size: 1.25em;
+}
+
+.font-med {
+  font-size: 1.1em;
+}
+
+.font-small {
+  font-size: .8em;
+}
+
+.font-xsmall {
+  font-size: .65em;
+}
+
+.font-sans {
+  font-family: $font-sans;
+}
+
+.caps {
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.accessibility {
+  position: absolute;
+  left: -999em;
+}
+
+

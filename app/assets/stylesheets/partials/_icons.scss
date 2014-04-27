@@ -1,0 +1,34 @@
+//using font-awesome for now, but will want to transfer this into something more custom/forward thinking
+
+.fa-trash-o {
+  font-size: 1em;
+  margin-left: 5px;
+}
+
+.fa-pencil-square-o {
+  margin-right: -.2em;
+}
+
+.fa-pencil {
+  margin-right: -.13em;
+}
+
+.fa-caret-down {
+	margin-left: 0.5em;
+
+	header & {
+		margin-left: 0;
+	}
+}
+
+.fa-arrow-right{
+	font-size: 0.8em;
+	margin-top: -1.5em;
+	margin-left: 0.5em;
+}
+
+.fa-arrow-down{
+	font-size: 0.8em;
+	margin-top: -3.5em;
+	margin-left: 0.5em;
+}

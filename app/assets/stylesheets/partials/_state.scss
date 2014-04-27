@@ -1,0 +1,201 @@
+//for ui states on elements. Can be added/removed dynamically. All classes should begin with "is-" (ex: is-active, is-disabled) but there will be exceptions.
+
+html {
+  @include transition(opacity .07s);
+}
+.page-loading {
+  opacity: 0;
+}
+
+.on-pointer:hover { cursor: pointer; }
+
+.is-hidden {display:none;}
+.is-loading {
+  display:block;
+  position: relative;
+
+  .loading-content-area, &.loading-content-area {
+    opacity: .3;
+  }
+
+  &:before {
+    content: '';
+    margin:-25px 0 0 -25px;
+    width:50px;
+    height:50px;
+    border-radius:25px;
+    box-sizing:border-box;
+    border:25px solid $color-blue;
+    @include animation(loading 1.3s linear 0 infinite);
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+  }
+}
+
+@keyframes loading
+  {
+    0% {
+      border: 25px solid $color-blue;
+      background:$color-light;
+    }
+    49.9% {
+      border: 5px solid $color-blue;
+      background:$color-light;
+    }
+    50% {
+      border: 25px solid $color-light;
+      background:$color-blue;
+    }
+    100%{
+      border: 0px solid $color-light;
+      background:$color-blue;
+    }
+  }
+
+  @-webkit-keyframes loading /* Safari and Chrome */
+  {
+    0% {
+      border: 25px solid $color-blue;
+      background:$color-light;
+    }
+    49.9% {
+      border: 5px solid $color-blue;
+      background:$color-light;
+    }
+    50% {
+      border: 25px solid $color-light;
+      background:$color-blue;
+    }
+    100%{
+      border: 0px solid $color-light;
+      background:$color-blue;
+    }
+  }
+
+.show-on-hover {
+  display: none;
+
+  .hovering &, .hover-parent:hover &, .dropdown-overides-hover.dropdown-active & {
+    display: block;
+
+    &.inline {
+      display: inline;
+    }
+
+    &.inline-block {
+      @include inline-block;
+    }
+
+  }
+}
+
+.hide-on-hover {
+  .hovering &, .hover-parent:hover &, .dropdown-overides-hover.dropdown-active & {
+    display: none;
+  }
+}
+
+.visible-on-hover {
+  opacity: 0;
+
+  .hovering &, .hover-parent:hover & {
+    opacity: 1;
+
+  }
+}
+
+.show-on-selected {
+  display: none;
+
+  .selected &, .selected-border & {
+    display: block;
+
+    &.inline {
+      display: inline;
+    }
+
+    &.inline-block {
+      @include inline-block;
+    }
+
+  }
+}
+
+.visible-on-selected {
+  opacity: 0;
+
+  .selected &, .selected-border & {
+    opacity: 1;
+  }
+}
+
+
+.show-on-active {
+  display: none;
+
+  .active.show-on-active-parent & {
+    display: block;
+
+    &.inline {
+      display: inline;
+    }
+
+    &.inline-block {
+      @include inline-block;
+    }
+
+  }
+}
+
+.show-on-active-trigger {
+  .active.show-on-active-parent & {
+    display: none;
+  }
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.no-wrap{
+  white-space: nowrap;
+}
+
+.freeze-scroll {
+  overflow: hidden;
+  height:100%;
+}
+
+.scrollable {
+  overflow: scroll;
+}
+
+.padded {
+  &.hanging-list {
+    li {
+      @include border-radius(2px);
+      width: 100%;
+      padding-left: 4%;
+      padding-right: 4%;
+      padding-top: 0.3em;
+      padding-bottom: 0.1em;
+      position: relative;
+      left: -4%;
+      
+    }
+  }
+}
+
+.hide-at-small {
+  display:none;
+
+  @include breakpoint($media-md) {
+    display: inline;
+  }
+}

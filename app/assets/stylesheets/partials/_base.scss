@@ -1,0 +1,164 @@
+//base: unclassed elements
+
+html, body {
+  height:auto;
+  position: relative;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding-left:0;
+}
+
+img {
+  max-width: 100%;
+}
+
+abbr[title]{
+border-bottom: none;
+}
+
+ul, ol {
+  padding-left: 0;
+
+  &.no-bullets {
+    li {list-style-type:none; }
+  }
+
+  &.compact {
+    padding: 0;
+    margin: 0;
+  }
+
+  &.ruled {
+    padding: 0;
+    border-top: 1px solid $color-neutral-lt;
+
+    li {
+
+      padding: 1em 0; 
+      border-bottom: 1px solid $color-neutral-lt;
+      list-style: none;
+      
+      &:hover.highlight-hover {
+        background-color: $color-accent-lt3;
+      }
+
+      &.last{
+        border-bottom:none;
+      }
+
+      &:last-child {
+        //border-bottom:none;
+      }
+
+      &.no-padding{
+        padding: 0;
+      }
+
+    }
+
+    &.compact {
+      li {
+        padding: .25em 0;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  &.negative-margin {
+    margin-left: -1em;
+  }
+
+  &.top {
+    margin-top: 0;
+  }
+
+  &.status-list {
+    li {
+      color: $color-gray-8;
+
+      &.active {
+        color: $color-dark;
+      }
+    }
+  }
+}
+
+ol {
+  list-style-position:inside;
+}
+
+
+
+section, .section {
+  @include clearfix;
+  padding-top: 1.75em;
+  margin-bottom: 1.75em;
+  
+  &.border {
+    border-top: 3px solid $color-neutral-lt;
+    
+    &.compact {
+      border-top: 1px solid $color-neutral-lt;
+    }
+  }
+
+  &.border-thin {
+    border-top: 1px solid $color-neutral-lt;
+  }
+
+
+  &.compact, .compact & {
+    padding-top: 1.5em;
+    //padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+
+    &.no-bottom-margin {
+      margin-bottom: 0;
+    }
+
+  }
+
+  &.semi-compact, .semi-compact & {
+    padding-top: 1.1em;
+    //padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+
+    &.no-bottom-margin {
+      margin-bottom: 0;
+    }
+
+  }
+
+  &.super-compact, .super-compact & {
+    padding-top: 1em;
+    //padding-bottom: 1em;
+    margin-bottom: 0;
+  }
+
+  &.top {
+    padding-top: 0;
+  }
+
+  &.bottom {
+    margin-bottom: 0.75em;
+  }
+
+  &.no-whitespace {
+    margin-top:0;
+    margin-bottom:0;
+    padding-top:0;
+    padding-bottom:0;
+  }
+
+}
+

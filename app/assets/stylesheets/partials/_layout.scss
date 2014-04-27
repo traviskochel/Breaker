@@ -1,0 +1,201 @@
+//layout: for the grid system and position of elements
+//uses the singularity grid framework, located:
+//https://github.com/Team-Sass/Singularity/wiki
+
+//thinking of taking inspiration from the starbucks style guide framework for naming conventions: 
+//http://www.starbucks.com/static/reference/styleguide/grid_how_to.aspx
+
+main {
+  @include clearfix;
+  padding-top: 2.5em;
+  padding-bottom: 4em;
+
+  &.full-bleed {
+    padding-bottom: 0;
+  }
+
+}
+
+.container {
+  //@include background-grid;
+  @include grid-span(12, 2);
+  @include clearfix;
+  clear: both;
+
+}
+
+
+.clearfix {
+  @include clearfix;
+}
+
+.relative {position: relative;}
+.clear, .clear-both {clear:both; }
+.float-left { float:left; }
+.float-right { float:right; }
+.float-none { float:none; }
+
+.full-width {
+  @include box-sizing(border-box);
+  float: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-align:center;
+}
+
+
+.list-inline {
+  li {display:inline;margin-right: 1em;}
+}
+.list-inline-block {
+  li {@include inline-block;margin-right: 1em;}
+}
+.list-block {
+  li {display:block;}
+}
+
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+
+.inline {
+  display: inline;
+}
+.inline-block {
+  @include inline-block;
+}
+
+
+//not synced up with grid
+.half {
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+  clear: both;
+
+  &:nth-of-type(2n) {
+    clear: none;
+    margin-right: 0;
+  }
+
+}
+
+.padded-thin {
+  @include box-sizing(border-box);
+  padding: .5em;
+}
+
+.padded {
+  @include box-sizing(border-box);
+  padding: 1em;
+}
+
+.padded-double {
+  @include box-sizing(border-box);
+  padding: 1.5em;
+}
+
+.padded-double-right {
+  @include box-sizing(border-box);
+  padding-right: 1.5em;
+}
+
+.padded-double-top {
+  @include box-sizing(border-box);
+  padding-top: 1.5em;
+}
+
+
+ul.padded {
+  padding:0;
+
+  li {
+    @include box-sizing(border-box);
+    padding: .3em 0 ;
+  }
+}
+
+.space-below {
+  padding-bottom: 2em;
+}
+
+.add-top-margin{
+  margin-top: 0.6em;
+}
+
+.add-bottom-margin {
+  margin-bottom: 1em;
+}
+.add-right-margin {
+  margin-right: 1em;
+}
+.no-bottom-margin {
+  margin-bottom: 0;
+}
+
+.add-top-padding {
+  padding-top: .5em;
+}
+.no-right-margin {
+  margin-right: 0;
+}
+
+.half-margin {
+  margin-bottom: .5em;
+}
+
+.no-whitespace {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.vertical-center-wrap {
+  display: table;
+}
+.vertical-center {
+  display: table-cell; 
+  vertical-align: middle; 
+  width: 100%;
+}
+
+.align-middle {
+  @include translateY(-50%);
+  position: relative;
+  top: 50%;
+  max-height: 100%;
+}
+
+.scroll-wrap {
+  height: 100%;
+  overflow-y: scroll;
+}
+.upper-right-corner {
+  position:absolute;
+  top: 1em;
+  right: 1em;
+
+  &.absolute-corner {
+    top: 0;
+    right: 0;
+  }
+}
+
+.fill-height {
+  position: relative;
+  .fill-height-scroll {
+    position: absolute;
+    height: 100%;
+    overflow-y: auto;
+  }  
+}
+
+

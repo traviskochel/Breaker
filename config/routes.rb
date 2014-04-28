@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :tasks
+
+  resources :deployments
+
   resources :assumptions
 
   resources :steps

@@ -1,43 +1,50 @@
 <p id="notice"><%= notice %></p>
 
 <h1>
-  Project: <%= @project.name %>
+  <%= @project.name %>
 </h1>
 
-<%= link_to 'Edit', edit_project_path(@project), class: 'btn small'  %>
-<p>
-  <strong>Created By</strong> <br>
-  <%= @project.user.name %> <br>
-  <%= time_ago_in_words(@project.created_at) %> ago
 
-</p>
-
-<p>
-  <%= @project.description %>
-</p>
-
-
-<section class="border">
-  <h3>Scenarios</h3>
+<section class="grid-3 story-details border">
   
+  <p>
+    <strong>Created By</strong> <br>
+    <%= @project.user.name %> <br>
+    <%= time_ago_in_words(@project.created_at) %> ago
 
-  <section class='group'>
+  </p>
+
+  <p>
+    <%= @project.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_project_path(@project), class: 'btn small'  %>
+</section>
+
+<section class="grid-9 last border">
+  <h2>Scenarios</h2>
+  
+    <%= render 'groups/form' %>
+  
+  <section class="groups">
+    
     <% @project.groups.each do |group| %>
-      <h5><%= group.name %> <%= link_to 'edit' , edit_group_path(group) %></h5>
-      <ul class='ruled'>
-        <% group.scenarios.each do |scenario| %>
-          <li><%= link_to scenario.name, scenario %></li>
-        <% end %>
+      <section class='group'>
+        <h5><%= link_to group.name , edit_group_path(group)  %></h5>
+        <ul class='ruled'>
+          <% group.scenarios.each do |scenario| %>
+            <li><%= link_to scenario.name, edit_scenario_path(scenario) %></li>
+          <% end %>
 
-        <li><%= link_to 'New Scenario' , new_scenario_path(:group_id => group.id), class: 'btn outline small'  %></li>
-      </ul>
+          <li><%= link_to 'New Scenario' , new_scenario_path(:group_id => group.id), class: 'btn outline small'  %></li>
+        </ul>
+      </section>
     <% end %>
   </section>
   
-  <section class="border">
-    <%= render 'groups/form' %>
-  </section>
+  
 </section>
+
 
 
 

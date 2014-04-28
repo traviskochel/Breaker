@@ -1,6 +1,5 @@
 class CreatePrereqs < ActiveRecord::Migration
   def change
-    remove_column :steps, :type
     
     create_table :prereqs do |t|
       t.string :instruction

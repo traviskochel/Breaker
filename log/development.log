@@ -32241,3 +32241,419 @@ Processing by ScenariosController#show as HTML
   Rendered scenarios/show.html.erb within layouts/application (45.1ms)
   Rendered layouts/_header.html.erb (0.5ms)
 Completed 200 OK in 95ms (Views: 45.6ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2014-04-27 21:06:59 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (21.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 68ms (Views: 34.7ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2014-04-27 21:07:03 -0700
+Processing by ProjectsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered projects/_form.html.erb (8.9ms)
+  Rendered projects/new.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 16.4ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2014-04-27 21:07:21 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAfrIwCE+UcsVf7K5LtRXWQNzWSvAzdPYSVqOS8k4PI=", "project"=>{"name"=>"Flagsmith", "description"=>"cool flag font"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-04-28 04:07:21.228705"], ["description", "cool flag font"], ["name", "Flagsmith"], ["updated_at", "2014-04-28 04:07:21.228705"], ["user_id", 2]]
+  [1m[35m (8.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/projects/4
+Completed 302 Found in 151ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 21:07:21 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered groups/_form.html.erb (7.6ms)
+  Rendered projects/show.html.erb within layouts/application (31.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 98ms (Views: 37.1ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/groups" for 127.0.0.1 at 2014-04-27 21:07:39 -0700
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAfrIwCE+UcsVf7K5LtRXWQNzWSvAzdPYSVqOS8k4PI=", "group"=>{"name"=>"Login", "project_id"=>"4"}, "commit"=>"Add"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "groups" ("created_at", "name", "project_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-04-28 04:07:39.467450"], ["name", "Login"], ["project_id", 4], ["updated_at", "2014-04-28 04:07:39.467450"], ["user_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+Redirected to http://localhost:3000/projects/4
+Completed 302 Found in 157ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 21:07:39 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  Rendered groups/_form.html.erb (4.6ms)
+  Rendered projects/show.html.erb within layouts/application (34.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 103ms (Views: 40.2ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/groups/3/edit" for 127.0.0.1 at 2014-04-27 21:07:44 -0700
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  Rendered groups/_form.html.erb (12.1ms)
+  Rendered groups/edit.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 72ms (Views: 29.4ms | ActiveRecord: 5.3ms)
+
+
+Started PATCH "/groups/3" for 127.0.0.1 at 2014-04-27 21:07:52 -0700
+Processing by GroupsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAfrIwCE+UcsVf7K5LtRXWQNzWSvAzdPYSVqOS8k4PI=", "group"=>{"name"=>"Accounts", "project_id"=>"4"}, "commit"=>"Add", "id"=>"3"}
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "groups" SET "name" = $1, "updated_at" = $2 WHERE "groups"."id" = 3  [["name", "Accounts"], ["updated_at", "2014-04-28 04:07:52.631384"]]
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/groups/3
+Completed 302 Found in 69ms (ActiveRecord: 14.4ms)
+
+
+Started GET "/groups/3" for 127.0.0.1 at 2014-04-27 21:07:52 -0700
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", "3"]]
+  Rendered groups/show.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 128ms (Views: 10.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2014-04-27 21:07:55 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (16.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 53ms (Views: 20.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 21:07:57 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  Rendered groups/_form.html.erb (4.4ms)
+  Rendered projects/show.html.erb within layouts/application (106.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 172ms (Views: 110.2ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/scenarios/new?group_id=3" for 127.0.0.1 at 2014-04-27 21:08:01 -0700
+Processing by ScenariosController#new as HTML
+  Parameters: {"group_id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered prereqs/_basic_fields.html.erb (10.5ms)
+  Rendered prereqs/_basic_fields.html.erb (6.7ms)
+  Rendered prereqs/_form.html.erb (22.3ms)
+  Rendered steps/_basic_fields.html.erb (9.6ms)
+  Rendered steps/_basic_fields.html.erb (12.1ms)
+  Rendered steps/_form.html.erb (33.6ms)
+  Rendered scenarios/_form.html.erb (73.9ms)
+  Rendered scenarios/new.html.erb within layouts/application (75.7ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 173ms (Views: 85.2ms | ActiveRecord: 9.7ms)
+
+
+Started POST "/scenarios" for 127.0.0.1 at 2014-04-27 21:09:16 -0700
+Processing by ScenariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAfrIwCE+UcsVf7K5LtRXWQNzWSvAzdPYSVqOS8k4PI=", "scenario"=>{"name"=>"Login", "priority"=>"2", "expected"=>"Someone with an account can login", "prereqs_attributes"=>{"0"=>{"instruction"=>"User account must exist", "_destroy"=>"false"}, "1398658119988"=>{"instruction"=>"", "_destroy"=>"false"}, "1398658121098"=>{"instruction"=>"", "_destroy"=>"false"}}, "steps_attributes"=>{"0"=>{"instruction"=>"Click on login", "_destroy"=>"false"}, "1398658132952"=>{"instruction"=>"enter email and password", "_destroy"=>"false"}, "1398658147139"=>{"instruction"=>"", "_destroy"=>"false"}}, "notes"=>"", "group_id"=>"3"}, "commit"=>"Create Scenario"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scenarios" ("created_at", "expected", "group_id", "name", "notes", "priority", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", "2014-04-28 04:09:16.790615"], ["expected", "Someone with an account can login"], ["group_id", 3], ["name", "Login"], ["notes", ""], ["priority", 2], ["updated_at", "2014-04-28 04:09:16.790615"], ["user_id", 2]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "steps" ("created_at", "instruction", "scenario_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-04-28 04:09:16.795897"], ["instruction", "Click on login"], ["scenario_id", 4], ["updated_at", "2014-04-28 04:09:16.795897"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "steps" ("created_at", "instruction", "scenario_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-04-28 04:09:16.799598"], ["instruction", "enter email and password"], ["scenario_id", 4], ["updated_at", "2014-04-28 04:09:16.799598"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "prereqs" ("created_at", "instruction", "scenario_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-04-28 04:09:16.803167"], ["instruction", "User account must exist"], ["scenario_id", 4], ["updated_at", "2014-04-28 04:09:16.803167"]]
+  [1m[35m (8.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/scenarios/4
+Completed 302 Found in 107ms (ActiveRecord: 20.1ms)
+
+
+Started GET "/scenarios/4" for 127.0.0.1 at 2014-04-27 21:09:16 -0700
+Processing by ScenariosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered scenarios/show.html.erb within layouts/application (112.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 162ms (Views: 113.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2014-04-27 21:09:21 -0700
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 52ms (Views: 20.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 21:09:24 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  Rendered groups/_form.html.erb (4.5ms)
+  Rendered projects/show.html.erb within layouts/application (117.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 181ms (Views: 120.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/scenarios/new?group_id=3" for 127.0.0.1 at 2014-04-27 21:09:28 -0700
+Processing by ScenariosController#new as HTML
+  Parameters: {"group_id"=>"3"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered prereqs/_basic_fields.html.erb (7.5ms)
+  Rendered prereqs/_basic_fields.html.erb (5.9ms)
+  Rendered prereqs/_form.html.erb (16.8ms)
+  Rendered steps/_basic_fields.html.erb (4.5ms)
+  Rendered steps/_basic_fields.html.erb (3.6ms)
+  Rendered steps/_form.html.erb (11.0ms)
+  Rendered scenarios/_form.html.erb (39.8ms)
+  Rendered scenarios/new.html.erb within layouts/application (41.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 123ms (Views: 46.9ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/scenarios" for 127.0.0.1 at 2014-04-27 21:11:08 -0700
+Processing by ScenariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAfrIwCE+UcsVf7K5LtRXWQNzWSvAzdPYSVqOS8k4PI=", "scenario"=>{"name"=>"Edit Account", "priority"=>"3", "expected"=>"Able to change account information", "prereqs_attributes"=>{"0"=>{"instruction"=>"account exists", "_destroy"=>"false"}, "1398658209291"=>{"instruction"=>"signed in ", "_destroy"=>"false"}}, "steps_attributes"=>{"0"=>{"instruction"=>"go to edit account", "_destroy"=>"false"}, "1398658259133"=>{"instruction"=>"change information", "_destroy"=>"false"}}, "notes"=>"", "group_id"=>"3"}, "commit"=>"Create Scenario"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "scenarios" ("created_at", "expected", "group_id", "name", "notes", "priority", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", "2014-04-28 04:11:08.872982"], ["expected", "Able to change account information"], ["group_id", 3], ["name", "Edit Account"], ["notes", ""], ["priority", 3], ["updated_at", "2014-04-28 04:11:08.872982"], ["user_id", 2]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "steps" ("created_at", "instruction", "scenario_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-04-28 04:11:08.877027"], ["instruction", "go to edit account"], ["scenario_id", 5], ["updated_at", "2014-04-28 04:11:08.877027"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "steps" ("created_at", "instruction", "scenario_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-04-28 04:11:08.880516"], ["instruction", "change information"], ["scenario_id", 5], ["updated_at", "2014-04-28 04:11:08.880516"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "prereqs" ("created_at", "instruction", "scenario_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-04-28 04:11:08.884149"], ["instruction", "account exists"], ["scenario_id", 5], ["updated_at", "2014-04-28 04:11:08.884149"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "prereqs" ("created_at", "instruction", "scenario_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-04-28 04:11:08.888063"], ["instruction", "signed in "], ["scenario_id", 5], ["updated_at", "2014-04-28 04:11:08.888063"]]
+  [1m[35m (8.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/scenarios/5
+Completed 302 Found in 113ms (ActiveRecord: 20.9ms)
+
+
+Started GET "/scenarios/5" for 127.0.0.1 at 2014-04-27 21:11:08 -0700
+Processing by ScenariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered scenarios/show.html.erb within layouts/application (121.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 170ms (Views: 122.0ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 21:11:12 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  Rendered groups/_form.html.erb (4.3ms)
+  Rendered projects/show.html.erb within layouts/application (42.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 104ms (Views: 44.3ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/groups" for 127.0.0.1 at 2014-04-27 21:11:27 -0700
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAfrIwCE+UcsVf7K5LtRXWQNzWSvAzdPYSVqOS8k4PI=", "group"=>{"name"=>"Shopping Car", "project_id"=>"4"}, "commit"=>"Add"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "groups" ("created_at", "name", "project_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-04-28 04:11:27.443958"], ["name", "Shopping Car"], ["project_id", 4], ["updated_at", "2014-04-28 04:11:27.443958"], ["user_id", 2]]
+  [1m[36m (7.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+Redirected to http://localhost:3000/projects/4
+Completed 302 Found in 89ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 21:11:27 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mGroup Load (0.5ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.8ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (1.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  Rendered groups/_form.html.erb (134.6ms)
+  Rendered projects/show.html.erb within layouts/application (194.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 264ms (Views: 194.1ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/groups/4/edit" for 127.0.0.1 at 2014-04-27 21:11:30 -0700
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered groups/_form.html.erb (7.5ms)
+  Rendered groups/edit.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 15.9ms | ActiveRecord: 5.1ms)
+
+
+Started PATCH "/groups/4" for 127.0.0.1 at 2014-04-27 21:11:32 -0700
+Processing by GroupsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAfrIwCE+UcsVf7K5LtRXWQNzWSvAzdPYSVqOS8k4PI=", "group"=>{"name"=>"Shopping Cart", "project_id"=>"4"}, "commit"=>"Add", "id"=>"4"}
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "groups" SET "name" = $1, "updated_at" = $2 WHERE "groups"."id" = 4[0m  [["name", "Shopping Cart"], ["updated_at", "2014-04-28 04:11:32.817126"]]
+  [1m[35m (7.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/groups/4
+Completed 302 Found in 66ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/groups/4" for 127.0.0.1 at 2014-04-27 21:11:32 -0700
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered groups/show.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 64ms (Views: 15.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2014-04-27 21:11:36 -0700
+Processing by GroupsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  Rendered groups/index.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 63ms (Views: 31.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/groups/4" for 127.0.0.1 at 2014-04-27 21:11:40 -0700
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", "4"]]
+  Rendered groups/show.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 127ms (Views: 10.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2014-04-27 21:11:45 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 56ms (Views: 20.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 21:11:50 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  Rendered groups/_form.html.erb (4.7ms)
+  Rendered projects/show.html.erb within layouts/application (122.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 187ms (Views: 125.6ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/scenarios/4" for 127.0.0.1 at 2014-04-27 21:15:44 -0700
+Processing by ScenariosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mScenario Load (0.3ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered scenarios/show.html.erb within layouts/application (52.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 117ms (Views: 53.7ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/scenarios/4" for 127.0.0.1 at 2014-04-27 21:41:31 -0700
+Processing by ScenariosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mGroup Load (0.4ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered scenarios/show.html.erb within layouts/application (61.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 188ms (Views: 63.5ms | ActiveRecord: 12.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenamePrereqsToAssumptions (20140428044425)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "prereqs" RENAME TO "assumptions"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "prereqs_id_seq" RENAME TO "assumptions_id_seq"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140428044425"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 21:55:19 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mGroup Load (0.5ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.4ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.4ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  Rendered groups/_form.html.erb (111.5ms)
+  Rendered projects/show.html.erb within layouts/application (293.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 640ms (Views: 386.8ms | ActiveRecord: 16.5ms)

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Instruction:</strong>
+  <%= @assumption.instruction %>
+</p>
+
+<p>
+  <strong>Scenario:</strong>
+  <%= @assumption.scenario_id %>
+</p>
+
+<%= link_to 'Edit', edit_assumption_path(@assumption) %> |
+<%= link_to 'Back', assumptions_path %>

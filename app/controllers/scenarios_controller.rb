@@ -19,13 +19,13 @@ class ScenariosController < ApplicationController
     @scenario = Scenario.new
     @scenario.group_id = params[:group_id]
     @scenario.steps.build
-    @scenario.prereqs.build
+    @scenario.assumptions.build
   end
 
   # GET /scenarios/1/edit
   def edit
     @scenario.steps.build
-    @scenario.prereqs.build
+    @scenario.assumptions.build
   end
 
   # POST /scenarios
@@ -86,7 +86,7 @@ class ScenariosController < ApplicationController
         :user_id, 
         :group_id, 
         :steps_attributes => [:id, :instruction, :_destroy],
-        :prereqs_attributes => [:id, :instruction, :_destroy],
+        :assumptions_attributes => [:id, :instruction, :_destroy],
       )
     end
 end

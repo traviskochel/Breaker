@@ -1,8 +1,0 @@
-<ul class='steps-list field-builder no-bullets'>
-
-  <%= f.simple_fields_for :prereqs do |fn| %>
-    <%= render 'prereqs/basic_fields', :fn => fn %>
-  <% end %>
-
-  <li><%= add_fields_link "Add Prereq", f, :prereqs, 'basic_fields', 'btn clear-outline' %></li>
-</ul><!-- /.collaborators-list -->

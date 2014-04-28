@@ -1,0 +1,27 @@
+<h1>Listing assumptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instruction</th>
+      <th>Scenario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assumptions.each do |assumption| %>
+      <tr>
+        <td><%= assumption.instruction %></td>
+        <td><%= assumption.scenario_id %></td>
+        <td><%= link_to 'Show', assumption %></td>
+        <td><%= link_to 'Edit', edit_assumption_path(assumption) %></td>
+        <td><%= link_to 'Destroy', assumption, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New assumption', new_assumption_path %>

@@ -1,74 +1,74 @@
-class PrereqsController < ApplicationController
-  before_action :set_prereq, only: [:show, :edit, :update, :destroy]
+class AssumptionsController < ApplicationController
+  before_action :set_assumption, only: [:show, :edit, :update, :destroy]
 
-  # GET /prereqs
-  # GET /prereqs.json
+  # GET /assumptions
+  # GET /assumptions.json
   def index
-    @prereqs = Prereq.all
+    @assumptions = Assumption.all
   end
 
-  # GET /prereqs/1
-  # GET /prereqs/1.json
+  # GET /assumptions/1
+  # GET /assumptions/1.json
   def show
   end
 
-  # GET /prereqs/new
+  # GET /assumptions/new
   def new
-    @prereq = Prereq.new
+    @assumption = Assumption.new
   end
 
-  # GET /prereqs/1/edit
+  # GET /assumptions/1/edit
   def edit
   end
 
-  # POST /prereqs
-  # POST /prereqs.json
+  # POST /assumptions
+  # POST /assumptions.json
   def create
-    @prereq = Prereq.new(prereq_params)
+    @assumption = Assumption.new(assumption_params)
 
     respond_to do |format|
-      if @prereq.save
-        format.html { redirect_to @prereq, notice: 'Prereq was successfully created.' }
-        format.json { render :show, status: :created, location: @prereq }
+      if @assumption.save
+        format.html { redirect_to @assumption, notice: 'Assumption was successfully created.' }
+        format.json { render :show, status: :created, location: @assumption }
       else
         format.html { render :new }
-        format.json { render json: @prereq.errors, status: :unprocessable_entity }
+        format.json { render json: @assumption.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /prereqs/1
-  # PATCH/PUT /prereqs/1.json
+  # PATCH/PUT /assumptions/1
+  # PATCH/PUT /assumptions/1.json
   def update
     respond_to do |format|
-      if @prereq.update(prereq_params)
-        format.html { redirect_to @prereq, notice: 'Prereq was successfully updated.' }
-        format.json { render :show, status: :ok, location: @prereq }
+      if @assumption.update(assumption_params)
+        format.html { redirect_to @assumption, notice: 'Assumption was successfully updated.' }
+        format.json { render :show, status: :ok, location: @assumption }
       else
         format.html { render :edit }
-        format.json { render json: @prereq.errors, status: :unprocessable_entity }
+        format.json { render json: @assumption.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /prereqs/1
-  # DELETE /prereqs/1.json
+  # DELETE /assumptions/1
+  # DELETE /assumptions/1.json
   def destroy
-    @prereq.destroy
+    @assumption.destroy
     respond_to do |format|
-      format.html { redirect_to prereqs_url }
+      format.html { redirect_to assumptions_url }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_prereq
-      @prereq = Prereq.find(params[:id])
+    def set_assumption
+      @assumption = Assumption.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def prereq_params
-      params.require(:prereq).permit(:instruction, :scenario_id)
+    def assumption_params
+      params.require(:assumption).permit(:instruction, :scenario_id)
     end
 end

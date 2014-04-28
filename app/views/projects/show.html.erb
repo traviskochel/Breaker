@@ -18,12 +18,13 @@
 
 
 <section class="border">
-  <h3>Cases</h3>
+  <h3>Scenarios</h3>
   
-  <div class='group'>
+
+  <section class='group'>
     <% @project.groups.each do |group| %>
       <h5><%= group.name %> <%= link_to 'edit' , edit_group_path(group) %></h5>
-      <ul>
+      <ul class='ruled'>
         <% group.scenarios.each do |scenario| %>
           <li><%= link_to scenario.name, scenario %></li>
         <% end %>
@@ -31,10 +32,10 @@
         <li><%= link_to 'New Scenario' , new_scenario_path(:group_id => group.id), class: 'btn outline small'  %></li>
       </ul>
     <% end %>
-  </div>
+  </section>
   
   <section class="border">
-    <%= link_to 'New Group', new_group_path(:project_id => @project.id), class: 'btn outline small'   %>
+    <%= render 'groups/form' %>
   </section>
 </section>
 

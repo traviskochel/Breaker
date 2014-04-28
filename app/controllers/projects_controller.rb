@@ -12,6 +12,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @group = Group.new
+    @group.project_id = @project.id
   end
 
   # GET /projects/new

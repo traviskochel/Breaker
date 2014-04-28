@@ -29,7 +29,8 @@ class ScenariosController < ApplicationController
   def create
     @scenario = Scenario.new(scenario_params)
     @scenario.user_id = current_user.id
-    
+    @scenario.priority = 2 if @scenario.priority.blank?
+
     respond_to do |format|
       if @scenario.save
         format.html { redirect_to @scenario, notice: 'Scenario was successfully created.' }

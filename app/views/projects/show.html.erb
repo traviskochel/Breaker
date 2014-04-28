@@ -53,7 +53,7 @@
     <h5>Current</h5>
     <ul class="ruled">
       <% @project.deployments.current.each do |deployment| %>
-        <li><%= link_to deployment.name , edit_deployment_path(deployment) %>
+        <li><%= link_to deployment.name , deployment %>
         </li>
       <% end %>
     </ul>
@@ -63,7 +63,7 @@
     <h5>Completed</h5>
     <ul class="ruled">
       <% @project.deployments.completed.each do |deployment| %>
-        <li><%= link_to deployment.name , edit_deployment_path(deployment) %>
+        <li><%= link_to deployment.name , deployment %>
         </li>
       <% end %>
     </ul>

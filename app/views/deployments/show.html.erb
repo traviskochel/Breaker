@@ -1,19 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @deployment.name %>
-</p>
+<h1>Deployment: <%= @deployment.name %></h1>
 
-<p>
-  <strong>User:</strong>
-  <%= @deployment.user_id %>
-</p>
+<section class="grid-2">
+  <p><strong>Project</strong><br>
+    <%= @deployment.project.name %>
+  </p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @deployment.project_id %>
-</p>
+  <p><strong>Created By</strong> <br>
+    <%= @deployment.user.name %> <br>
+    <%= time_ago_in_words(@deployment.created_at) %> ago
+  </p>
+</section>
 
-<%= link_to 'Edit', edit_deployment_path(@deployment) %> |
-<%= link_to 'Back', deployments_path %>
+<section class="grid-5">
+  <h2>Scenarios</h2>
+  
+  <ul class="ruled">
+    <% @deployment.tasks.each do |task| %>
+      <li><%= task.scenario.name %></li>
+    <% end %>
+  </ul>
+
+</section>

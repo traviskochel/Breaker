@@ -31,6 +31,8 @@ class DeploymentsController < ApplicationController
 
     respond_to do |format|
       if @deployment.save
+        build_tasks(@deployment)
+
         format.html { redirect_to @deployment.project, notice: 'Deployment was successfully created.' }
         format.json { render :show, status: :created, location: @deployment }
       else
@@ -69,7 +71,15 @@ class DeploymentsController < ApplicationController
     def set_deployment
       @deployment = Deployment.find(params[:id])
     end
-
+    def build_tasks(deployment)
+      deployment.project.scenarios.each do |scenario|
+        task = deployment.tasks.build
+        task.scenario_id = scenario.id
+        task.deployment_id = deployment.id
+        task.user_id = current_user.id
+        task.save
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def deployment_params
       params.require(:deployment).permit(:name, :user_id, :project_id)

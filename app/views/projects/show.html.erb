@@ -1,19 +1,42 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+  Project: <%= @project.name %>
+</h1>
+
+<%= link_to 'Edit', edit_project_path(@project), class: 'btn small'  %>
 <p>
-  <strong>Name:</strong>
-  <%= @project.name %>
+  <strong>Created By</strong> <br>
+  <%= @project.user.name %> <br>
+  <%= time_ago_in_words(@project.created_at) %> ago
+
 </p>
 
 <p>
-  <strong>Description:</strong>
   <%= @project.description %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<section class="border">
+  <h3>Cases</h3>
+  
+  <div class='group'>
+    <% @project.groups.each do |group| %>
+      <h5><%= group.name %> <%= link_to 'edit' , edit_group_path(group) %></h5>
+      <ul>
+        <% group.scenarios.each do |scenario| %>
+          <li><%= link_to scenario.name, scenario %></li>
+        <% end %>
+
+        <li><%= link_to 'New Scenario' , new_scenario_path(:group_id => group.id), class: 'btn outline small'  %></li>
+      </ul>
+    <% end %>
+  </div>
+  
+  <section class="border">
+    <%= link_to 'New Group', new_group_path(:project_id => @project.id), class: 'btn outline small'   %>
+  </section>
+</section>
+
+
+

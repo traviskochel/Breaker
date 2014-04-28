@@ -1,0 +1,15 @@
+<%= simple_form_for(@scenario) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :expected %>
+    <%= f.input :notes %>
+    <%= f.input :priority, collection: 1..5, selected: 2 %>
+    <%= f.input :group_id, as: :hidden %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

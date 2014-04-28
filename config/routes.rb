@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :groups
+
+  resources :scenarios
+
   resources :projects
 
   devise_for :users

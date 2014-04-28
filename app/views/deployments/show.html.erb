@@ -17,8 +17,8 @@
   <h2>Scenarios</h2>
   
   <ul class="ruled">
-    <% @deployment.tasks.each do |task| %>
-      <li><%= task.scenario.name %></li>
+    <% @deployment.tasks.order('created_at ASC').each do |task| %>
+      <li><%= render 'tasks/form_checkbox', :task => task %></li>
     <% end %>
   </ul>
 

@@ -86,7 +86,7 @@ class ScenariosController < ApplicationController
         :user_id, 
         :group_id, 
         :steps_attributes => [:id, :instruction, :_destroy],
-        :assumptions_attributes => [:id, :instruction, :_destroy],
+        :assumptions_attributes => [:id, :instruction, :_destroy]
       )
     end
 end

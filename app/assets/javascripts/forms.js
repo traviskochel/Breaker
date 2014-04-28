@@ -8,6 +8,7 @@
       BR_forms.openFileBrowser();
       BR_forms.submitOnEnterKey();
       BR_forms.ajaxStatuses();
+      BR_forms.submitOnChange();
     },
 
     linkSubmits: function(){
@@ -148,6 +149,12 @@
       $('form').on('ajax:error',    function(xhr, data, status) {
         $(this).addClass('error');
         //console.log('error');
+      });
+    },
+
+    submitOnChange: function(){
+      $('form').on('change', '.submit-on-change', function () {
+        $(this).closest('form').submit();
       });
     }
 

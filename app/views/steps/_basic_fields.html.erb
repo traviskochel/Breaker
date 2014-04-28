@@ -1,0 +1,7 @@
+<li class='add-field-wrap clearfix compact-form step'>
+  <div class='form-inputs float-left'>
+    <%= fn.input :instruction, placeholder: 'instruction', label_html: {class: 'accessibility'} %>
+  </div>
+  <%= fn.input :_destroy, :as => :hidden, :input_html => { :class => "delete-target" } %>
+  <%= link_to '<i class="fa fa-times-circle"></i>'.html_safe , '#', :class => 'align-to-input delete-step delete-field'  %>
+</li>

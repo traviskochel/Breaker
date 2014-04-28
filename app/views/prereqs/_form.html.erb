@@ -1,7 +1,8 @@
-<%= f.simple_fields_for :prereqs do |s| %>
-  <ol>
-    <li class="form-inputs relative clearfix">
-      <%= s.input :instruction, placeholder: 'instruction', label_html: {class: 'accessibility'} %>
-    </li>
-  </ol>
-<% end %>
+<ul class='steps-list field-builder no-bullets'>
+
+  <%= f.simple_fields_for :prereqs do |fn| %>
+    <%= render 'prereqs/basic_fields', :fn => fn %>
+  <% end %>
+
+  <li><%= add_fields_link "Add Prereq", f, :prereqs, 'basic_fields', 'btn clear-outline' %></li>
+</ul><!-- /.collaborators-list -->

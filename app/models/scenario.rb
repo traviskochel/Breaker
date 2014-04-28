@@ -4,6 +4,6 @@ class Scenario < ActiveRecord::Base
   has_many :steps
   has_many :prereqs
 
-  accepts_nested_attributes_for :steps
-  accepts_nested_attributes_for :prereqs
+  accepts_nested_attributes_for :steps, :reject_if => proc { |a| a['instruction'].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :prereqs, :reject_if => proc { |a| a['instruction'].blank? }, :allow_destroy => true
 end

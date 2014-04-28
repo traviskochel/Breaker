@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140428052535) do
     t.string   "name"
     t.integer  "user_id"
     t.integer  "project_id"
+    t.boolean  "completed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

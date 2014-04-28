@@ -14,6 +14,8 @@ class ProjectsController < ApplicationController
   def show
     @group = Group.new
     @group.project_id = @project.id
+
+    @deployment = @project.deployments.build
   end
 
   # GET /projects/new

@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :projects
+  has_many :groups
+  has_many :scenarios
+  has_many :deployments
+  has_many :tasks
 
   def admin?
     self.admin

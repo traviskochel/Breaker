@@ -1,4 +1,6 @@
 class DeploymentsController < ApplicationController
+  load_and_authorize_resource 
+
   before_action :set_deployment, only: [:show, :edit, :update, :destroy]
 
   # GET /deployments
@@ -25,10 +27,11 @@ class DeploymentsController < ApplicationController
   # POST /deployments.json
   def create
     @deployment = Deployment.new(deployment_params)
+    @deployment.user_id = current_user.id
 
     respond_to do |format|
       if @deployment.save
-        format.html { redirect_to @deployment, notice: 'Deployment was successfully created.' }
+        format.html { redirect_to @deployment.project, notice: 'Deployment was successfully created.' }
         format.json { render :show, status: :created, location: @deployment }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class DeploymentsController < ApplicationController
   def update
     respond_to do |format|
       if @deployment.update(deployment_params)
-        format.html { redirect_to @deployment, notice: 'Deployment was successfully updated.' }
+        format.html { redirect_to @deployment.project, notice: 'Deployment was successfully updated.' }
         format.json { render :show, status: :ok, location: @deployment }
       else
         format.html { render :edit }

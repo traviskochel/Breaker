@@ -33442,3 +33442,2302 @@ Migrating to CreateTasks (20140428052535)
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140428052535"]]
   [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:27:25 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.9ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered projects/show.html.erb within layouts/application (110.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 236ms (Views: 112.9ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:27:35 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (62.9ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.5ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered projects/show.html.erb within layouts/application (112.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 181ms (Views: 114.7ms | ActiveRecord: 12.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTasks (20140428052535)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "tasks"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140428052535'[0m
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateDeployments (20140428052406)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "deployments"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140428052406'[0m
+  [1m[35m (9.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDeployments (20140428052406)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (12.4ms)[0m  [1mCREATE TABLE "deployments" ("id" serial primary key, "name" character varying(255), "user_id" integer, "project_id" integer, "completed" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140428052406"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTasks (20140428052535)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "tasks" ("id" serial primary key, "scenario_id" integer, "deployment_id" integer, "user_id" integer, "completed" boolean, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140428052535"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:40:51 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (5.3ms)
+  [1m[35mGroup Load (0.4ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered projects/show.html.erb within layouts/application (128.3ms)
+Completed 500 Internal Server Error in 248ms
+
+NoMethodError - undefined method `deployments' for #<Project:0x00000102251a90>:
+  activemodel (4.1.0) lib/active_model/attribute_methods.rb:435:in `method_missing'
+  activerecord (4.1.0) lib/active_record/attribute_methods.rb:206:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:52:in `_app_views_projects_show_html_erb__1426933732173710454_2203314900'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2204201820/variables" for 127.0.0.1 at 2014-04-27 22:40:52 -0700
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"  WHERE "users"."id" = $1  [["id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:41:18 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (5.2ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.4ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  [1m[35mDeployment Load (8.8ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."completed" = 'f'  ORDER BY created_at DESC
+  Rendered projects/show.html.erb within layouts/application (149.2ms)
+Completed 500 Internal Server Error in 269ms
+
+NoMethodError - undefined method `call' for #<ActiveRecord::Relation []>:
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block (2 levels) in scope'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block in scope'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `block in method_missing'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `block in scoping'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `scoping'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:52:in `_app_views_projects_show_html_erb__1426933732173710454_2203314900'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2205802280/variables" for 127.0.0.1 at 2014-04-27 22:41:18 -0700
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:41:44 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (4.8ms)
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  [1m[36mDeployment Load (0.4ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."completed" = 'f'[0m
+  Rendered projects/show.html.erb within layouts/application (133.9ms)
+Completed 500 Internal Server Error in 257ms
+
+NoMethodError - undefined method `call' for #<ActiveRecord::Relation []>:
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block (2 levels) in scope'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block in scope'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `block in method_missing'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `block in scoping'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `scoping'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:52:in `_app_views_projects_show_html_erb__1426933732173710454_2203314900'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2205916180/variables" for 127.0.0.1 at 2014-04-27 22:41:44 -0700
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:41:58 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.4ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered projects/show.html.erb within layouts/application (55.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 241ms (Views: 115.2ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:42:13 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.3ms)
+  [1m[35mGroup Load (0.5ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."completed" = 'f'  ORDER BY created_at DESC
+  Rendered projects/show.html.erb within layouts/application (127.1ms)
+Completed 500 Internal Server Error in 254ms
+
+NoMethodError - undefined method `call' for #<ActiveRecord::Relation []>:
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block (2 levels) in scope'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block in scope'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `block in method_missing'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `block in scoping'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `scoping'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:52:in `_app_views_projects_show_html_erb__1426933732173710454_2206029720'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2190056060/variables" for 127.0.0.1 at 2014-04-27 22:42:14 -0700
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:42:25 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (4.7ms)
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.4ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.4ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  [1m[36mDeployment Load (0.5ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."completed" = 't'  ORDER BY created_at DESC[0m
+  Rendered projects/show.html.erb within layouts/application (139.8ms)
+Completed 500 Internal Server Error in 260ms
+
+NoMethodError - undefined method `call' for #<ActiveRecord::Relation []>:
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block (2 levels) in scope'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block in scope'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `block in method_missing'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `block in scoping'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `scoping'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:54:in `_app_views_projects_show_html_erb__1426933732173710454_2206162520'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2190584060/variables" for 127.0.0.1 at 2014-04-27 22:42:25 -0700
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:42:44 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (5.2ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  [1m[35mDeployment Load (0.8ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."completed" = 'f'  ORDER BY created_at DESC
+  Rendered projects/show.html.erb within layouts/application (135.8ms)
+Completed 500 Internal Server Error in 255ms
+
+NoMethodError - undefined method `call' for #<ActiveRecord::Relation []>:
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block (2 levels) in scope'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block in scope'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `block in method_missing'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `block in scoping'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `scoping'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:52:in `_app_views_projects_show_html_erb__1426933732173710454_2189981420'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2190631340/variables" for 127.0.0.1 at 2014-04-27 22:42:45 -0700
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:43:11 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (4.5ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  [1m[36mDeployment Load (0.4ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."completed" = 'f'  ORDER BY created_at DESC[0m
+  Rendered projects/show.html.erb within layouts/application (132.6ms)
+Completed 500 Internal Server Error in 249ms
+
+NoMethodError - undefined method `call' for #<ActiveRecord::Relation []>:
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block (2 levels) in scope'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block in scope'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `block in method_missing'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `block in scoping'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `scoping'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:52:in `_app_views_projects_show_html_erb__1426933732173710454_2173702180'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2190389080/variables" for 127.0.0.1 at 2014-04-27 22:43:12 -0700
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:44:07 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.6ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.4ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  [1m[35mDeployment Load (0.5ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."completed" = 'f'  ORDER BY created_at DESC
+  Rendered projects/show.html.erb within layouts/application (132.2ms)
+Completed 500 Internal Server Error in 201ms
+
+NoMethodError - undefined method `call' for #<ActiveRecord::Relation []>:
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block (2 levels) in scope'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block in scope'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `block in method_missing'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `block in scoping'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `scoping'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:52:in `_app_views_projects_show_html_erb__1426933732173710454_2173702180'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2190807940/variables" for 127.0.0.1 at 2014-04-27 22:44:07 -0700
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:44:16 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (4.4ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.4ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."completed" = 'f'  ORDER BY created_at DESC[0m
+  Rendered projects/show.html.erb within layouts/application (145.1ms)
+Completed 500 Internal Server Error in 208ms
+
+NoMethodError - undefined method `call' for #<ActiveRecord::Relation []>:
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block (2 levels) in scope'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block in scope'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `block in method_missing'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `block in scoping'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `scoping'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:52:in `_app_views_projects_show_html_erb__1426933732173710454_2227258100'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2190875000/variables" for 127.0.0.1 at 2014-04-27 22:44:17 -0700
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:44:22 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (5.2ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  [1m[35mDeployment Load (0.3ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (127.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 195ms (Views: 129.9ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:44:42 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (5.8ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.4ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  [1m[36mDeployment Load (0.5ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE (completed = 'f')  ORDER BY created_at DESC[0m
+  Rendered projects/show.html.erb within layouts/application (132.5ms)
+Completed 500 Internal Server Error in 258ms
+
+NoMethodError - undefined method `call' for #<ActiveRecord::Relation []>:
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block (2 levels) in scope'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/scoping/named.rb:151:in `block in scope'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `block in method_missing'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `block in scoping'
+  activerecord (4.1.0) lib/active_record/relation.rb:286:in `scoping'
+  activerecord (4.1.0) lib/active_record/associations/collection_proxy.rb:872:in `scoping'
+  activerecord (4.1.0) lib/active_record/relation/delegation.rb:94:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/views/projects/show.html.erb:52:in `_app_views_projects_show_html_erb__1426933732173710454_2204141660'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2206142680/variables" for 127.0.0.1 at 2014-04-27 22:44:43 -0700
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:45:54 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (5.3ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  [1m[35mDeployment Load (0.3ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (completed = 'f')  ORDER BY created_at DESC  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (121.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 248ms (Views: 122.6ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:46:44 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (64.7ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.2ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 'f'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  [1m[35mDeployment Load (0.5ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (138.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 204ms (Views: 138.4ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:48:59 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (4.4ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.2ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (7.8ms)
+  [1m[36mDeployment Load (0.4ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 'f'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (127.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 277ms (Views: 130.0ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:49:29 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (4.3ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.4ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.5ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (6.8ms)
+  [1m[36mDeployment Load (0.4ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 'f'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (129.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 273ms (Views: 130.2ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/deployments" for 127.0.0.1 at 2014-04-27 22:49:49 -0700
+Processing by DeploymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAfrIwCE+UcsVf7K5LtRXWQNzWSvAzdPYSVqOS8k4PI=", "deployment"=>{"name"=>"The first deployment ever", "user_id"=>"", "project_id"=>"4"}, "commit"=>"Create Deployment"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "deployments" ("created_at", "name", "project_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-04-28 05:49:49.204331"], ["name", "The first deployment ever"], ["project_id", 4], ["updated_at", "2014-04-28 05:49:49.204331"], ["user_id", 2]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/deployments/1
+Completed 500 Internal Server Error in 111ms
+
+CanCan::AuthorizationNotPerformed - This action failed the check_authorization because it does not authorize_resource. Add skip_authorization_check to bypass this check.:
+  cancancan (1.7.1) lib/cancan/controller_additions.rb:261:in `block in check_authorization'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:440:in `block in make_lambda'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:231:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2173716980/variables" for 127.0.0.1 at 2014-04-27 22:49:49 -0700
+
+
+Started GET "/projects" for 127.0.0.1 at 2014-04-27 22:49:54 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 113ms (Views: 77.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:49:58 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (4.8ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.2ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (9.5ms)
+  [1m[36mDeployment Load (0.5ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 'f'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (125.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 264ms (Views: 183.9ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:50:46 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered groups/_form.html.erb (4.5ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 3]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 4]]
+  [1m[35mScenario Load (0.2ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (6.9ms)
+  [1m[36mDeployment Load (0.6ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 'f'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (128.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 273ms (Views: 131.0ms | ActiveRecord: 14.5ms)
+
+
+Started POST "/deployments" for 127.0.0.1 at 2014-04-27 22:50:50 -0700
+Processing by DeploymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BAfrIwCE+UcsVf7K5LtRXWQNzWSvAzdPYSVqOS8k4PI=", "deployment"=>{"name"=>"testing", "user_id"=>"", "project_id"=>"4"}, "commit"=>"Create Deployment"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "deployments" ("created_at", "name", "project_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-04-28 05:50:50.315737"], ["name", "testing"], ["project_id", 4], ["updated_at", "2014-04-28 05:50:50.315737"], ["user_id", 2]]
+  [1m[35m (8.1ms)[0m  COMMIT
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Redirected to http://localhost:3000/projects/4
+Completed 302 Found in 142ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:50:50 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.5ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (6.4ms)
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 'f'  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.4ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (123.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 273ms (Views: 126.6ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:50:53 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.7ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (6.8ms)
+  [1m[35mDeployment Load (0.3ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 'f'  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (126.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 271ms (Views: 128.5ms | ActiveRecord: 14.6ms)
+  [1m[36mDeployment Load (0.7ms)[0m  [1mSELECT "deployments".* FROM "deployments"[0m
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:52:03 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.5ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (6.6ms)
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (completed != 't')  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (126.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 274ms (Views: 128.0ms | ActiveRecord: 16.5ms)
+  [1m[35mDeployment Load (1.1ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."completed" = 'f'  ORDER BY created_at DESC
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:52:57 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.4ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.4ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (7.2ms)
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (("deployments"."completed" = 'f' OR "deployments"."completed" IS NULL))  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (127.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 271ms (Views: 129.1ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:53:17 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.8ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (6.6ms)
+  [1m[35mDeployment Load (0.5ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (("deployments"."completed" = 'f' OR "deployments"."completed" IS NULL))  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (186.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 270ms (Views: 188.8ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:54:43 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (63.5ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.5ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.5ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (5.3ms)
+  [1m[35mDeployment Load (0.6ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (("deployments"."completed" = 'f' OR "deployments"."completed" IS NULL))  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (130.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 213ms (Views: 131.1ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:55:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.3ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (4.6ms)
+  [1m[35mDeployment Load (0.5ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (("deployments"."completed" = 'f' OR "deployments"."completed" IS NULL))  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (125.9ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 269ms (Views: 127.8ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:55:52 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.5ms)
+  [1m[35mGroup Load (0.4ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (5.8ms)
+  [1m[35mDeployment Load (0.6ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (("deployments"."completed" = 'f' OR "deployments"."completed" IS NULL))  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (128.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 276ms (Views: 129.3ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:56:14 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.5ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.4ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.5ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (4.9ms)
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (("deployments"."completed" = 'f' OR "deployments"."completed" IS NULL))  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (139.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 284ms (Views: 141.1ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:56:43 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (5.0ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.4ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (6.6ms)
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (("deployments"."completed" = 'f' OR "deployments"."completed" IS NULL))  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.3ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (128.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 271ms (Views: 130.5ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2014-04-27 22:57:33 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", "4"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered groups/_form.html.erb (4.5ms)
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"  WHERE "groups"."project_id" = $1  [["project_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 3]]
+  [1m[35mScenario Load (0.3ms)[0m  SELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1  [["group_id", 4]]
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT "scenarios".* FROM "scenarios"  WHERE "scenarios"."group_id" = $1[0m  [["group_id", 5]]
+  Rendered deployments/_form.html.erb (4.5ms)
+  [1m[35mDeployment Load (0.5ms)[0m  SELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND (("deployments"."completed" = 'f' OR "deployments"."completed" IS NULL))  ORDER BY created_at DESC  [["project_id", 4]]
+  [1m[36mDeployment Load (0.4ms)[0m  [1mSELECT "deployments".* FROM "deployments"  WHERE "deployments"."project_id" = $1 AND "deployments"."completed" = 't'  ORDER BY created_at DESC[0m  [["project_id", 4]]
+  Rendered projects/show.html.erb within layouts/application (185.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 268ms (Views: 187.7ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/deployments/2/edit" for 127.0.0.1 at 2014-04-27 22:57:55 -0700
+Processing by DeploymentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mDeployment Load (0.4ms)[0m  SELECT  "deployments".* FROM "deployments"  WHERE "deployments"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "deployments".* FROM "deployments"  WHERE "deployments"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered deployments/_form.html.erb (8.2ms)
+  Rendered deployments/edit.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 131ms (Views: 18.3ms | ActiveRecord: 5.1ms)

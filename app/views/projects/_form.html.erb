@@ -1,0 +1,16 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+
+    <% if @project.new_record? %>
+      <%= f.input :user, as: :hidden, input_html: {value: current_user.id }   %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -19535,3 +19535,527 @@ Processing by ProjectsController#show as HTML
   Rendered projects/show.html.erb within layouts/application (47.3ms)
   Rendered layouts/_header.html.erb (0.5ms)
 Completed 200 OK in 170ms (Views: 49.7ms | ActiveRecord: 10.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSteps (20140428014825)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (34.0ms)[0m  [1mCREATE TABLE "steps" ("id" serial primary key, "instruction" character varying(255), "type" character varying(255), "scenario_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140428014825"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePrereqs (20140428020319)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePrereqs (20140428020319)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "steps" DROP "type"[0m
+  [1m[35m (11.5ms)[0m  CREATE TABLE "prereqs" ("id" serial primary key, "instruction" character varying(255), "scenario_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140428020319"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/scenarios/3" for 127.0.0.1 at 2014-04-27 19:09:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ScenariosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mScenario Load (0.3ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mGroup Load (2.0ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered scenarios/show.html.erb within layouts/application (55.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 111ms (Views: 56.7ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/scenarios/3" for 127.0.0.1 at 2014-04-27 19:09:24 -0700
+Processing by ScenariosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects"  WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered scenarios/show.html.erb within layouts/application (45.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 100ms (Views: 45.2ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:09:27 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mScenario Load (0.2ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", "3"]]
+  Rendered prereqs/_form.html.erb (4.6ms)
+  [1m[36mStep Load (0.6ms)[0m  [1mSELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  Rendered steps/_form.html.erb (15.5ms)
+  Rendered scenarios/_form.html.erb (95.1ms)
+  Rendered scenarios/edit.html.erb within layouts/application (96.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 146ms (Views: 101.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:10:03 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mScenario Load (0.3ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", "3"]]
+  Rendered prereqs/_form.html.erb (7.8ms)
+  [1m[36mStep Load (0.5ms)[0m  [1mSELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  Rendered steps/_form.html.erb (93.5ms)
+  Rendered scenarios/_form.html.erb (129.1ms)
+  Rendered scenarios/edit.html.erb within layouts/application (131.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 197ms (Views: 140.0ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:10:30 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mScenario Load (0.2ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", "3"]]
+Completed 500 Internal Server Error in 134ms
+
+NoMethodError - undefined method `prereqs' for #<Scenario:0x0000010a93a908>:
+  activemodel (4.1.0) lib/active_model/attribute_methods.rb:435:in `method_missing'
+  activerecord (4.1.0) lib/active_record/attribute_methods.rb:206:in `method_missing'
+   () Users/traviskochel/github/Breaker/app/controllers/scenarios_controller.rb:28:in `edit'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2216249680/variables" for 127.0.0.1 at 2014-04-27 19:10:30 -0700
+  [1m[36mStep Load (0.4ms)[0m  [1mSELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  [1m[35mStep Load (0.3ms)[0m  SELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1  [["scenario_id", 3]]
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:11:12 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mPrereq Load (0.4ms)[0m  SELECT "prereqs".* FROM "prereqs"  WHERE "prereqs"."scenario_id" = $1  [["scenario_id", 3]]
+  Rendered prereqs/_form.html.erb (7.3ms)
+  [1m[36mStep Load (0.4ms)[0m  [1mSELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  Rendered steps/_form.html.erb (7.4ms)
+  Rendered scenarios/_form.html.erb (32.9ms)
+  Rendered scenarios/edit.html.erb within layouts/application (34.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 173ms (Views: 39.1ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:12:02 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mScenario Load (0.3ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", "3"]]
+  Rendered prereqs/_form.html.erb (76.9ms)
+  Rendered scenarios/_form.html.erb (92.7ms)
+  Rendered scenarios/edit.html.erb within layouts/application (93.7ms)
+Completed 500 Internal Server Error in 170ms
+
+SyntaxError - /Users/traviskochel/github/Breaker/app/views/prereqs/_form.html.erb:4: syntax error, unexpected ')'
+...l: {class: 'accessibility'} % );@output_buffer.safe_append='
+...                               ^
+/Users/traviskochel/github/Breaker/app/views/prereqs/_form.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/traviskochel/github/Breaker/app/views/prereqs/_form.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/traviskochel/github/Breaker/app/views/prereqs/_form.html.erb:11: syntax error, unexpected keyword_end, expecting ')':
+  actionview (4.1.0) lib/action_view/template.rb:297:in `'
+  actionview (4.1.0) lib/action_view/template.rb:297:in `compile'
+  actionview (4.1.0) lib/action_view/template.rb:245:in `block (2 levels) in compile!'
+  activesupport (4.1.0) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:244:in `block in compile!'
+  actionview (4.1.0) lib/action_view/template.rb:232:in `compile!'
+  actionview (4.1.0) lib/action_view/template.rb:144:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/partial_renderer.rb:306:in `render_partial'
+  actionview (4.1.0) lib/action_view/renderer/partial_renderer.rb:279:in `block in render'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/partial_renderer.rb:278:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.1.0) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+   () Users/traviskochel/github/Breaker/app/views/scenarios/_form.html.erb:12:in `block in _app_views_scenarios__form_html_erb__761300145150563378_2162049380'
+  actionview (4.1.0) lib/action_view/helpers/capture_helper.rb:38:in `block in capture'
+  actionview (4.1.0) lib/action_view/helpers/capture_helper.rb:200:in `with_output_buffer'
+  actionview (4.1.0) lib/action_view/helpers/capture_helper.rb:38:in `capture'
+  actionview (4.1.0) lib/action_view/helpers/form_helper.rb:434:in `form_for'
+  simple_form (3.0.2) lib/simple_form/action_view_extensions/form_helper.rb:22:in `block in simple_form_for'
+  simple_form (3.0.2) lib/simple_form/action_view_extensions/form_helper.rb:41:in `with_simple_form_field_error_proc'
+  simple_form (3.0.2) lib/simple_form/action_view_extensions/form_helper.rb:21:in `simple_form_for'
+   () Users/traviskochel/github/Breaker/app/views/scenarios/_form.html.erb:1:in `_app_views_scenarios__form_html_erb__761300145150563378_2162049380'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/partial_renderer.rb:306:in `render_partial'
+  actionview (4.1.0) lib/action_view/renderer/partial_renderer.rb:279:in `block in render'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/partial_renderer.rb:278:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.1.0) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+   () Users/traviskochel/github/Breaker/app/views/scenarios/edit.html.erb:3:in `_app_views_scenarios_edit_html_erb___1125526711478830174_2244203680'
+  actionview (4.1.0) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.0) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.0) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.0) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/traviskochel/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.0) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.0) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.0) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.0) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.0) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  bullet (4.8.0) lib/bullet/rack.rb:10:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.3.0) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/error_collector.rb:55:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/agent_hooks.rb:32:in `call'
+  newrelic_rpm (3.8.0.218) lib/new_relic/rack/browser_monitoring.rb:27:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.0) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  rails-dev-tweaks (1.1.0) lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  thin (1.6.2) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+  rack (1.5.2) lib/rack/handler/thin.rb:16:in `run'
+  rack (1.5.2) lib/rack/server.rb:264:in `start'
+  railties (4.1.0) lib/rails/commands/server.rb:69:in `start'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:81:in `block in server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:76:in `server'
+  railties (4.1.0) lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+  railties (4.1.0) lib/rails/commands.rb:17:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/rails:8:in `<top (required)>'
+  spring (1.1.2) lib/spring/client/rails.rb:27:in `call'
+  spring (1.1.2) lib/spring/client/command.rb:7:in `call'
+  spring (1.1.2) lib/spring/client.rb:26:in `run'
+  spring (1.1.2) bin/spring:48:in `<top (required)>'
+  spring (1.1.2) lib/spring/binstub.rb:11:in `<top (required)>'
+   () Users/traviskochel/github/Breaker/bin/spring:16:in `<top (required)>'
+   () rails:3:in `<main>'
+
+
+
+Started POST "/__better_errors/2216120460/variables" for 127.0.0.1 at 2014-04-27 19:12:03 -0700
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:12:20 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mPrereq Load (0.3ms)[0m  SELECT "prereqs".* FROM "prereqs"  WHERE "prereqs"."scenario_id" = $1  [["scenario_id", 3]]
+  Rendered prereqs/_form.html.erb (7.6ms)
+  [1m[36mStep Load (0.6ms)[0m  [1mSELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  Rendered steps/_form.html.erb (8.3ms)
+  Rendered scenarios/_form.html.erb (32.1ms)
+  Rendered scenarios/edit.html.erb within layouts/application (34.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 177ms (Views: 38.8ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:12:46 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mScenario Load (0.2ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mPrereq Load (0.4ms)[0m  [1mSELECT "prereqs".* FROM "prereqs"  WHERE "prereqs"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  Rendered prereqs/_form.html.erb (7.5ms)
+  [1m[35mStep Load (0.3ms)[0m  SELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1  [["scenario_id", 3]]
+  Rendered steps/_form.html.erb (7.9ms)
+  Rendered scenarios/_form.html.erb (93.9ms)
+  Rendered scenarios/edit.html.erb within layouts/application (95.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 175ms (Views: 100.2ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:12:55 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mScenario Load (0.3ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mPrereq Load (0.4ms)[0m  SELECT "prereqs".* FROM "prereqs"  WHERE "prereqs"."scenario_id" = $1  [["scenario_id", 3]]
+  Rendered prereqs/_form.html.erb (7.7ms)
+  [1m[36mStep Load (0.3ms)[0m  [1mSELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  Rendered steps/_form.html.erb (6.1ms)
+  Rendered scenarios/_form.html.erb (28.9ms)
+  Rendered scenarios/edit.html.erb within layouts/application (30.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 175ms (Views: 35.9ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:13:10 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mScenario Load (0.3ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mPrereq Load (0.4ms)[0m  [1mSELECT "prereqs".* FROM "prereqs"  WHERE "prereqs"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  Rendered prereqs/_form.html.erb (73.7ms)
+  [1m[35mStep Load (0.3ms)[0m  SELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1  [["scenario_id", 3]]
+  Rendered steps/_form.html.erb (7.0ms)
+  Rendered scenarios/_form.html.erb (97.7ms)
+  Rendered scenarios/edit.html.erb within layouts/application (99.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 185ms (Views: 104.9ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:13:18 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mScenario Load (0.2ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mPrereq Load (0.4ms)[0m  SELECT "prereqs".* FROM "prereqs"  WHERE "prereqs"."scenario_id" = $1  [["scenario_id", 3]]
+  Rendered prereqs/_form.html.erb (7.3ms)
+  [1m[36mStep Load (0.3ms)[0m  [1mSELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  Rendered steps/_form.html.erb (7.0ms)
+  Rendered scenarios/_form.html.erb (30.0ms)
+  Rendered scenarios/edit.html.erb within layouts/application (31.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 177ms (Views: 36.4ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/scenarios/3/edit" for 127.0.0.1 at 2014-04-27 19:13:20 -0700
+Processing by ScenariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mScenario Load (0.2ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "scenarios".* FROM "scenarios"  WHERE "scenarios"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mPrereq Load (0.3ms)[0m  [1mSELECT "prereqs".* FROM "prereqs"  WHERE "prereqs"."scenario_id" = $1[0m  [["scenario_id", 3]]
+  Rendered prereqs/_form.html.erb (6.5ms)
+  [1m[35mStep Load (0.3ms)[0m  SELECT "steps".* FROM "steps"  WHERE "steps"."scenario_id" = $1  [["scenario_id", 3]]
+  Rendered steps/_form.html.erb (5.8ms)
+  Rendered scenarios/_form.html.erb (87.2ms)
+  Rendered scenarios/edit.html.erb within layouts/application (88.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 174ms (Views: 93.6ms | ActiveRecord: 11.4ms)

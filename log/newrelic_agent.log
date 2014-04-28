@@ -850,3 +850,12 @@
 [04/27/14 18:26:31 -0700 Salo.local (16406)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `deployment_id' for #<Scenario:0x000001015fd898>
 [04/27/14 18:28:48 -0700 Salo.local (16406)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unknown key: :through. Valid keys are: :class_name, :class, :foreign_key, :validate, :autosave, :remote, :dependent, :primary_key, :inverse_of, :foreign_type, :polymorphic, :touch, :counter_cache
 [04/27/14 18:29:58 -0700 Salo.local (16406)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unknown key: :through. Valid keys are: :class_name, :class, :foreign_key, :validate, :autosave, :remote, :dependent, :primary_key, :inverse_of, :foreign_type, :polymorphic, :touch, :counter_cache
+[04/27/14 19:10:30 -0700 Salo.local (16406)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `prereqs' for #<Scenario:0x0000010a93a908>
+[04/27/14 19:12:03 -0700 Salo.local (16406)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /Users/traviskochel/github/Breaker/app/views/prereqs/_form.html.erb:4: syntax error, unexpected ')'
+...l: {class: 'accessibility'} % );@output_buffer.safe_append='
+...                               ^
+/Users/traviskochel/github/Breaker/app/views/prereqs/_form.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/traviskochel/github/Breaker/app/views/prereqs/_form.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/traviskochel/github/Breaker/app/views/prereqs/_form.html.erb:11: syntax error, unexpected keyword_end, expecting ')'

@@ -1,0 +1,7 @@
+<%= f.simple_fields_for :prereqs do |s| %>
+  <ol>
+    <li class="form-inputs relative clearfix">
+      <%= s.input :instruction, placeholder: 'instruction', label_html: {class: 'accessibility'} %>
+    </li>
+  </ol>
+<% end %>

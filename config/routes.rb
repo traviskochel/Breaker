@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :prereqs
+
+  resources :steps
+
   resources :groups
 
   resources :scenarios

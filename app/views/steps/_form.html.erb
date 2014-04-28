@@ -1,0 +1,7 @@
+<%= f.simple_fields_for :steps do |s| %>
+  <ul>
+    <li class="form-inputs relative clearfis">
+      <%= s.input :instruction, placeholder: 'instruction', label_html: {class: 'accessibility'} %>
+    </li>
+  </ul>
+<% end %>

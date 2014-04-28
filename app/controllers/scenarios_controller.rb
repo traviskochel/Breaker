@@ -18,10 +18,14 @@ class ScenariosController < ApplicationController
   def new
     @scenario = Scenario.new
     @scenario.group_id = params[:group_id]
+    @scenario.steps.build
+    @scenario.prereqs.build
   end
 
   # GET /scenarios/1/edit
   def edit
+    @scenario.steps.build
+    @scenario.prereqs.build
   end
 
   # POST /scenarios

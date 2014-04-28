@@ -2,12 +2,29 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :expected %>
-    <%= f.input :notes %>
-    <%= f.input :priority, collection: 1..5 %>
+    <section>
+      <%= f.input :name %>
+      <%= f.input :priority, collection: 1..5 %>
+      <%= f.input :expected, label: 'Expected Results' %>
+    </section>
+    <section>
+      <h3>Prequisites</h3>
+      <%= render 'prereqs/form', f: f %>
+    </section>
+    <section>
+      <h3>Steps</h3>
+      <%= render 'steps/form', f: f %>
+    </section>
+    <section>
+      <%= f.input :notes, label: 'Other Notes' %>
+    </section>
+    
+
+    
     <%= f.input :group_id, as: :hidden %>
   </div>
+  
+  
 
   <div class="form-actions">
     <%= f.button :submit %>

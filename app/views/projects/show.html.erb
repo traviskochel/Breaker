@@ -18,7 +18,7 @@
     <%= @project.description %>
   </p>
 
-  <%= link_to 'Edit', edit_project_path(@project), class: 'btn small'  %>
+  <%= link_to '<i class="fa fa-cog"></i>'.html_safe, edit_project_path(@project), class: 'btn small'  %>
 </section>
 
 <section class="grid-5 border">
@@ -32,8 +32,15 @@
       <section class='group'>
         <h5><%= link_to group.name , edit_group_path(group)  %></h5>
         <ul class='ruled'>
-          <% group.scenarios.each do |scenario| %>
-            <li><%= link_to scenario.name, edit_scenario_path(scenario) %></li>
+          <% group.scenarios.order('priority ASC, name ASC').each do |scenario| %>
+            <li class='priority-<%= scenario.priority %> clearfix'>
+              <div class="test-name">
+                <%= link_to scenario.name, edit_scenario_path(scenario) %> 
+              </div>
+              <div class="priority-indicator">
+                <%= scenario.priority %>
+              </div>
+            </li>
           <% end %>
 
           <li><%= render 'scenarios/form_compact', g_id: group.id %></li>

@@ -1,5 +1,15 @@
 //regions: for global elements such as header, footer, or main nav, whose attributes are standalone and don't have a great deal of reuse.
 
 //------------------------------------------
-// s
+// tests/scenarios
 //------------------------------------------
+
+.priority-indicator {
+  float: right;
+  border: 1px solid $color-gray-9;
+  padding: .1em .3em;
+}
+
+.test-name {
+  float: left;
+}

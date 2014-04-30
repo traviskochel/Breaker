@@ -50,7 +50,6 @@ gem 'figaro'
 
 # for monitoring
 gem 'newrelic_rpm'
-gem 'thin'
 
 gem 'simple_form'
 

@@ -2,6 +2,7 @@
   var BR = {
     init: function(){
       BR.tooltips();
+      BR.blankLinks();
     },
 
     tooltips: function(){
@@ -50,7 +51,16 @@
               $(this).tooltip("open");
             }
         });   
-    }
+    },
+    blankLinks: function(){
+      //prevent links with no url from jumping to top.
+      
+      $('body').on('click', 'a', function(){
+        if ($(this).attr('href') == '#') {
+          return false; 
+        }
+      });
+    },
     
   };
 

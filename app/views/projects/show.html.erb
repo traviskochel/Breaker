@@ -22,7 +22,7 @@
 </section>
 
 <section class="grid-5 border">
-  <h2>Scenarios</h2>
+  <h2>Tests</h2>
   
   <%= render 'groups/form' %>
   
@@ -36,7 +36,7 @@
             <li><%= link_to scenario.name, edit_scenario_path(scenario) %></li>
           <% end %>
 
-          <li><%= link_to 'New Scenario' , new_scenario_path(:group_id => group.id), class: 'btn outline small'  %></li>
+          <li><%= render 'scenarios/form_compact', g_id: group.id %></li>
         </ul>
       </section>
     <% end %>

@@ -1,3 +1,3 @@
 <%= simple_form_for(task, :remote => true ) do |f| %>
-  <%= f.input :completed, input_html: {class: 'submit-on-change'}, label: task.scenario.name  %>
+  <%= f.input :completed, input_html: {class: 'submit-on-change'}, label: false, wrapper_class: 'inline-block'  %> <%= link_to task.scenario.name, '#' %>
 <% end %>

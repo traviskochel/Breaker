@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
   def show
     @group = Group.new
     @group.project_id = @project.id
+    @scenario = Scenario.new
 
     @deployment = @project.deployments.build
   end

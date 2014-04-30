@@ -1,13 +1,8 @@
-<%= simple_form_for(@scenario) do |f| %>
-  <div class="half-wrap clearfix">
-    <div class="form-inputs half">
-      <%= f.input :name, placeholder: 'New Test', label_html: {class: 'accessibility'} %>
-      <%= f.input :priority, collection: 1..5, selected: 2 %>
+<%= simple_form_for(@scenario, html: {class: 'single-row'}) do |f| %>
+      <%= f.input :name, placeholder: 'New Test', label_html: {class: 'accessibility'}, wrapper_class: 'input inline-block' %>
+      <%= f.input :priority, collection: 1..5, selected: 2, input_html: {class: 'narrow'}, label: false, wrapper_class: 'input inline-block'  %>
       <%= f.input :group_id, as: :hidden, input_html: {value: g_id} %>
-    </div>
 
-    <div class="form-actions half last">
       <%= link_to '<i class="fa fa-arrow-right"></i>'.html_safe, '#', class: 'submit btn'  %>
-    </div>
-  </div>
+    
 <% end %>

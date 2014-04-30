@@ -66,6 +66,12 @@ button,select{
   border: 1px solid $color-gray-9;
 }
 
+select {
+  &.narrow {
+    width: 3em;
+  }
+}
+
 
 .color-reversed {
   .form-control {
@@ -130,6 +136,12 @@ label {
     display: none;
   }
 
+}
+
+form.single-row {
+  .input {
+    margin-right: .5em;
+  }
 }
 
 // text region character count 

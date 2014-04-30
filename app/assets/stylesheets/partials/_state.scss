@@ -9,7 +9,7 @@ html {
 
 .on-pointer:hover { cursor: pointer; }
 
-.is-hidden {display:none;}
+.is-hidden, .hidden {display:none;}
 .is-loading {
   display:block;
   position: relative;

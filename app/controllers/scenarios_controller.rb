@@ -37,7 +37,7 @@ class ScenariosController < ApplicationController
 
     respond_to do |format|
       if @scenario.save
-        format.html { redirect_to @scenario.group.project, notice: 'Scenario was successfully created.' }
+        format.html { redirect_to edit_project_path(@scenario.group.project), notice: 'Scenario was successfully created.' }
         format.json { render :show, status: :created, location: @scenario }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class ScenariosController < ApplicationController
   def update
     respond_to do |format|
       if @scenario.update(scenario_params)
-        format.html { redirect_to @scenario.group.project, notice: 'Scenario was successfully updated.' }
+        format.html { redirect_to edit_project_path(@scenario.group.project), notice: 'Scenario was successfully updated.' }
         format.json { render :show, status: :ok, location: @scenario }
       else
         format.html { render :edit }

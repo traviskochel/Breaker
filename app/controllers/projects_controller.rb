@@ -26,6 +26,9 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @group = Group.new
+    @group.project_id = @project.id
+    @scenario = Scenario.new
   end
 
   # POST /projects

@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
     @group.user_id = current_user.id
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group.project, notice: 'Group was successfully created.' }
+        format.html { redirect_to edit_project_path(@group.project), notice: 'Group was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class GroupsController < ApplicationController
   def update
     respond_to do |format|
       if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
+        format.html { redirect_to edit_project_path(@group.project), notice: 'Group was successfully updated.' }
         format.json { render :show, status: :ok, location: @group }
       else
         format.html { render :edit }

@@ -1,6 +1,40 @@
-<h1>Editing project</h1>
+<h1>Editing <%= @project.name %></h1>
 
-<%= render 'form' %>
+<section class="grid-2 story-details border">
+  <%= render 'form' %>
+</section>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+<section class="grid-10 last border">
+  <h2>Tests</h2>
+  
+  <%= render 'groups/form' %>
+  
+  <div class="groups clear-both">
+    
+    <% @project.groups.order('LOWER(name) ASC').each do |group| %>
+      <section class='group'>
+        <h5><%= link_to group.name , edit_group_path(group)  %></h5>
+        <ul class='ruled'>
+          <% group.scenarios.order('priority ASC, LOWER(name) ASC').each do |scenario| %>
+            <li class='priority-<%= scenario.priority %> clearfix'>
+              <div class="test-name">
+                <%= link_to scenario.name, edit_scenario_path(scenario) %> 
+              </div>
+              <div class="priority-indicator">
+                <%= scenario.priority %>
+              </div>
+            </li>
+          <% end %>
+
+          <li><%= render 'scenarios/form_compact', g_id: group.id %></li>
+        </ul>
+      </section>
+    <% end %>
+  </div>
+  
+</section>
+
+
+
+
+

@@ -1,0 +1,2 @@
+var newContent = "<%=j render('tasks/task_author', task: @task) %>"
+$('#task-<%= @task.id %> .edited-by').html(newContent);

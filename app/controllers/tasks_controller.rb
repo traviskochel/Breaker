@@ -41,9 +41,14 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
+    @task.user = current_user 
+    
     respond_to do |format|
       if @task.update(task_params)
+        @task.deployment.check_for_completeness
+        
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+        format.js {}
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit }

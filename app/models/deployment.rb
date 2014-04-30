@@ -8,4 +8,15 @@ class Deployment < ActiveRecord::Base
   scope :completed, -> {where(completed: true).order('created_at DESC')}
   scope :current, -> {where(completed: [false, nil]).order('created_at DESC')}
 
+  def check_for_completeness
+    if self.tasks.count == self.tasks.where(completed: true).count
+      self.completed = true
+      self.save
+
+    elsif self.completed == true
+      self.completed = false
+      self.save
+    end
+  end
+
 end

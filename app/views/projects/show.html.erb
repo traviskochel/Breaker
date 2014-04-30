@@ -11,70 +11,47 @@
     <strong>Created By</strong> <br>
     <%= @project.user.name %> <br>
     <%= time_ago_in_words(@project.created_at) %> ago
-
   </p>
-
   <p>
-    <%= @project.description %>
+    <%= link_to 'Edit Tests <i class="fa fa-cog"></i>'.html_safe , edit_project_path, class: 'btn'  %>
   </p>
 
-  <%= link_to '<i class="fa fa-cog"></i>'.html_safe, edit_project_path(@project), class: 'btn small'  %>
 </section>
 
-<section class="grid-5 border">
-  <h2>Tests</h2>
-  
-  <%= render 'groups/form' %>
-  
-  <div class="groups clear-both">
-    
-    <% @project.groups.each do |group| %>
-      <section class='group'>
-        <h5><%= link_to group.name , edit_group_path(group)  %></h5>
-        <ul class='ruled'>
-          <% group.scenarios.order('priority ASC, name ASC').each do |scenario| %>
-            <li class='priority-<%= scenario.priority %> clearfix'>
-              <div class="test-name">
-                <%= link_to scenario.name, edit_scenario_path(scenario) %> 
-              </div>
-              <div class="priority-indicator">
-                <%= scenario.priority %>
-              </div>
-            </li>
-          <% end %>
-
-          <li><%= render 'scenarios/form_compact', g_id: group.id %></li>
-        </ul>
-      </section>
-    <% end %>
-  </div>
-  
-</section>
-
-<section class="grid-5 border last">
+<section class="grid-10 border last clearfix">
   <h2>Deployments</h2>
   
-  <%= render 'deployments/form' %>
+  <section>
+    <%= render 'deployments/form' %>
+  </section>
   
-  <section>
-    <h5>Current</h5>
-    <ul class="ruled">
-      <% @project.deployments.current.each do |deployment| %>
-        <li><%= link_to deployment.name , deployment %>
-        </li>
-      <% end %>
-    </ul>
-  </section>
+  <div class="split-10-into-2">
+    <section class='clear-both split border'>
+      <h5>Current</h5>
+      <ul class="ruled">
+        <% @project.deployments.current.each do |deployment| %>
+          <li class='clearfix'>
+            <div class="name float-left"> 
+              <%= link_to deployment.name , deployment %> 
+            </div>
+            <div class="task-count float-right">
+              <em><%= deployment.tasks.count %> tests</em>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </section>
 
-  <section>
-    <h5>Completed</h5>
-    <ul class="ruled">
-      <% @project.deployments.completed.each do |deployment| %>
-        <li><%= link_to deployment.name , deployment %>
-        </li>
-      <% end %>
-    </ul>
-  </section>
+    <section class='split border'>
+      <h5>Completed</h5>
+      <ul class="ruled">
+        <% @project.deployments.completed.each do |deployment| %>
+          <li><%= link_to deployment.name , deployment %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
 </section>
 
 

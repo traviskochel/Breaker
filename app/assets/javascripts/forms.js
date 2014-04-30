@@ -155,6 +155,9 @@
     submitOnChange: function(){
       $('form').on('change', '.submit-on-change', function () {
         $(this).closest('form').submit();
+        if ($(this).hasClass('boolean')) {
+          $(this).closest('li').toggleClass('completed');
+        }
       });
     }
 

@@ -199,3 +199,10 @@ ul.padded {
 }
 
 
+.block {
+  padding: 2em 0;
+  
+  &.border {
+    border-top: 2px solid $color-gray-8;
+  }
+}

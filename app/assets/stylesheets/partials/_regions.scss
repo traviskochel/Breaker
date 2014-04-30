@@ -1,6 +1,23 @@
 //regions: for global elements such as header, footer, or main nav, whose attributes are standalone and don't have a great deal of reuse.
 
 //------------------------------------------
+// deployments
+//------------------------------------------
+
+.task-list {
+  .edited-by {
+    display: none;
+  }
+
+  .completed {
+    .edited-by {
+        display: inline;
+      }
+  }
+}
+
+
+//------------------------------------------
 // tests/scenarios
 //------------------------------------------
 

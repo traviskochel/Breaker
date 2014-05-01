@@ -21,8 +21,12 @@ header {
 
 }
 
-.breadcrumbs { 
+.breadcrumb-wrap { 
   clear: both;
   background-color: $color-gray-9;
+
+  .breadcrumbs {
+    padding: .2em 0;
+  }
 }
 

@@ -10,13 +10,13 @@
     <%= @deployment.completed %>
   </p>
 
-  <p><strong>Created By</strong> <br>
+  <p><strong>Started By</strong> <br>
     <%= @deployment.user.name %> <br>
     <%= time_ago_in_words(@deployment.created_at) %> ago
   </p>
 </section>
 
-<section class="grid-5 top task-list">
+<section class="grid-8 last top task-list">
   <% @task_groups.each do |group_id, tasks| %>
     <section class="compact">
       <h5><%= Group.find(group_id).name %></h5>

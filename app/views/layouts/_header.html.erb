@@ -1,8 +1,8 @@
-<header>
+<header class='clearfix'>
   <div class="container">
     <nav>
       <ul class='list-inline grid-8'>
-        <li><%= link_to 'Breaker', root_url %></li>
+        <li><%= link_to 'Breaker', root_url, class: 'logo'  %></li>
         
           <% if current_user %>
             <li><%= link_to 'Projects', projects_path %></li>
@@ -19,5 +19,8 @@
         <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %></li>
       <% end %>
     </ul>
+  </div>
+  <div class="breadcrumbs clearfix">
+    <%= breadcrumbs separator: " &rsaquo; ", class: 'container' %>
   </div>
 </header>

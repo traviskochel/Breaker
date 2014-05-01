@@ -15,6 +15,9 @@ gem 'breakpoint'
 gem 'singularitygs'
 gem 'singularity-extras'
 
+#for breadcrumbs
+gem "gretel", :github => 'ppworks/gretel', :branch => 'rails4.1'
+
 
 gem 'jquery-ui-rails'
 

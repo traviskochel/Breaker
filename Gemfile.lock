@@ -8,6 +8,14 @@ GIT
       json (>= 1.7)
       mime-types (>= 1.16)
 
+GIT
+  remote: git://github.com/ppworks/gretel.git
+  revision: 50c08c06ef2f1e7519ed6fbb4bab2d6b63402971
+  branch: rails4.1
+  specs:
+    gretel (3.0.6)
+      rails (>= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -255,6 +263,7 @@ DEPENDENCIES
   figaro
   fog
   font-awesome-rails
+  gretel!
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails

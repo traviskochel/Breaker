@@ -22,14 +22,7 @@
       <h5><%= Group.find(group_id).name %></h5>
       <ul class="ruled group">
         <% tasks.each do |task| %>
-          <li id="task-<%= task.id %>" class='priority-<%= task.scenario.priority %> <%= "completed" if task.completed %> clearfix'>
-            <div class="float-left">
-              <%= render 'tasks/form_checkbox', :task => task %> 
-            </div>
-            <div class="float-right priority-indicator">
-              <%= task.scenario.priority %>
-            </div>
-          </li>
+          <%= render 'tasks/task', task: task %>
         <% end %>
       </ul>
     </section>

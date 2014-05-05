@@ -5,9 +5,6 @@ class Deployment < ActiveRecord::Base
   
   accepts_nested_attributes_for :tasks, :allow_destroy => true
 
-  scope :completed, -> {where(completed: true).order('created_at DESC')}
-  scope :current, -> {where(completed: [false, nil]).order('created_at DESC')}
-
   def check_for_completeness
     if self.tasks.count == self.tasks.where(completed: true).count
       self.completed = true

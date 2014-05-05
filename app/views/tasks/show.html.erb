@@ -1,24 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% breadcrumb :task, @task %>
 
-<p>
-  <strong>Scenario:</strong>
-  <%= @task.scenario_id %>
-</p>
+<%= render 'tasks/task', :task => @task %>
 
-<p>
-  <strong>Deployment:</strong>
-  <%= @task.deployment_id %>
-</p>
+<ul class='ruled'>
+  <% @comments.each do |comment|  %>
+    <li><%= comment.user.name %>: <%= comment.message %> <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <% end %>
+</ul>
 
-<p>
-  <strong>User:</strong>
-  <%= @task.user_id %>
-</p>
-
-<p>
-  <strong>Completed:</strong>
-  <%= @task.completed %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= render 'comments/form' %>

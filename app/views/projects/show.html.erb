@@ -24,7 +24,7 @@
     <section class='clear-both grid-6 nest-10 border'>
       <h5>Current</h5>
       <ul class="ruled">
-        <% @project.current_deployments.each do |deployment| %>
+        <% @project.open_deployments.each do |deployment| %>
           <li class='clearfix'>
             <div class="name float-left"> 
               <%= link_to deployment.name , deployment %> 

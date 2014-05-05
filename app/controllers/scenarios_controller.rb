@@ -36,6 +36,7 @@ class ScenariosController < ApplicationController
 
     respond_to do |format|
       if @scenario.save
+        @scenario.sync_deployments
         format.html { redirect_to edit_project_path(@scenario.group.project), notice: 'Scenario was successfully created.' }
         format.json { render :show, status: :created, location: @scenario }
       else

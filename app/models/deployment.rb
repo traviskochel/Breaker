@@ -16,4 +16,18 @@ class Deployment < ActiveRecord::Base
     end
   end
 
+  def add_task(scenario)
+    task = self.tasks.build
+    task.scenario_id = scenario.id
+    task.group_id = scenario.group_id
+    task.user = self.user
+    task.save
+  end
+
+  def build_tasks
+    self.project.scenarios.each do |scenario|
+      self.add_task(scenario)
+    end
+  end
+
 end

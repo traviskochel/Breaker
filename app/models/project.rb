@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
   def completed_deployments
     self.deployments.where(completed: true).order('created_at DESC')
   end
-  def current_deployments
+  def open_deployments
     self.deployments.where(completed: [false, nil]).order('created_at DESC')
   end
 end

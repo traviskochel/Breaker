@@ -1,11 +1,31 @@
 <% breadcrumb :task, @task %>
 
-<%= render 'tasks/task', :task => @task %>
+<section>
+  <%= render 'tasks/task', :task => @task %>
+</section>
+<section class="border">
+  <h2>Comments</h2>
 
-<ul class='ruled'>
-  <% @comments.each do |comment|  %>
-    <li><%= comment.user.name %>: <%= comment.message %> <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <% if @comments.count > 0 %>`
+    <ul class='ruled'>
+      <% @comments.each do |comment|  %>
+        <li class='comment clearfix'>
+          <div class="grid-3">
+            <p>
+              <strong><%= comment.user.name %></strong>  <br> 
+              <em><%= time_ago_in_words(comment.created_at) %> ago</em> <br>
+              <%= link_to 'Edit', edit_comment_path(comment) %> <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </p>
+          </div>
+          <div class="grid-6 last">
+            <%= comment.message %> 
+          </div>
+          
+
+          </li>
+      <% end %>
+    </ul>
   <% end %>
-</ul>
 
-<%= render 'comments/form' %>
+  <%= render 'comments/form' %>
+</section>

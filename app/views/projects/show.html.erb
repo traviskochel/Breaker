@@ -9,16 +9,9 @@
 
 
 <section class="grid-2 story-details border">
-  
-  <p>
-    <strong>Created By</strong> <br>
-    <%= @project.user.name %> <br>
-    <%= time_ago_in_words(@project.created_at) %> ago
-  </p>
   <p>
     <%= link_to 'Edit Tests <i class="fa fa-cog"></i>'.html_safe , edit_project_path, class: 'btn'  %>
   </p>
-
 </section>
 
 <section class="grid-10 border last clearfix">

@@ -3,6 +3,10 @@
 .fa-trash-o {
   font-size: 1em;
   margin-left: 5px;
+  
+  .box & {
+    margin-left: 0;
+  }
 }
 
 .fa-pencil-square-o {

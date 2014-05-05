@@ -304,3 +304,18 @@
     }
   }
 }
+
+
+.box {
+  @include inline-block();
+  @include border-radius(.2em);
+  border: 1px solid transparent;
+  padding: 0 .3em;
+  margin-left: .5em;
+  
+  &.transparent {
+    padding: 0;
+  }
+
+}
+

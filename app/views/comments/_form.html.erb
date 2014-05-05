@@ -2,11 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :message %>
+    <%= f.input :message, placeholder: 'Message', label_html: { class: 'accessibility'} %>
     <%= f.input :task_id, as: :hidden %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, value: (@comment.new_record? ? 'Add Comment' : 'Save' ) %>
   </div>
 <% end %>

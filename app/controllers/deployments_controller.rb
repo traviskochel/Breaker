@@ -12,7 +12,7 @@ class DeploymentsController < ApplicationController
   # GET /deployments/1
   # GET /deployments/1.json
   def show
-    @task_groups = @deployment.tasks.includes(:scenario).order('scenarios.priority ASC, LOWER(name) ASC').group_by {|t| t.group_id}
+    @task_groups = @deployment.tasks.includes(:scenario).order('created_at ASC').group_by {|t| t.group_id}
   end
 
   # GET /deployments/new

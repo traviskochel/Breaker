@@ -17,14 +17,9 @@
       <section class='group'>
         <h5><%= link_to group.name , edit_group_path(group)  %></h5>
         <ul class='ruled'>
-          <% group.scenarios.order('priority ASC, LOWER(name) ASC').each do |scenario| %>
+          <% group.scenarios.order('created_at ASC').each do |scenario| %>
             <li class='priority-<%= scenario.priority %> clearfix'>
-              <div class="test-name">
-                <%= link_to scenario.name, edit_scenario_path(scenario) %> 
-              </div>
-              <div class="priority-indicator">
-                <%= scenario.priority %>
-              </div>
+              <%= link_to scenario.name, edit_scenario_path(scenario) %>               
             </li>
           <% end %>
 

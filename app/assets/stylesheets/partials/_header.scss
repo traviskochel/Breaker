@@ -4,17 +4,6 @@
 header {
   background-color: $color-dark;
 
-  nav a {
-    color: $color-light;
-    
-    &:hover {
-      color: $color-gray-8;
-    }
-    &:active {
-      color: $color-gray-5;
-    }
-  }
-
   .logo {
     font-weight: bold;
   }

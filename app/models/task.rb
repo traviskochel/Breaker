@@ -2,6 +2,7 @@ class Task < ActiveRecord::Base
   belongs_to :user
   belongs_to :deployment
   belongs_to :scenario
+  has_many :comments
 
   scope :completed, -> {where(completed: true).order('created_at DESC')}
 

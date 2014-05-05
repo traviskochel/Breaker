@@ -11,6 +11,9 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @comments = @task.comments
+    @comment = Comment.new(task_id: @task.id)
+
   end
 
   # GET /tasks/new

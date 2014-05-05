@@ -31,7 +31,7 @@
     <section class='clear-both grid-6 nest-10 border'>
       <h5>Current</h5>
       <ul class="ruled">
-        <% @project.deployments.current.each do |deployment| %>
+        <% @project.current_deployments.each do |deployment| %>
           <li class='clearfix'>
             <div class="name float-left"> 
               <%= link_to deployment.name , deployment %> 
@@ -47,7 +47,7 @@
     <section class='grid-4 nest-10 last border'>
       <h5>Completed</h5>
       <ul class="ruled">
-        <% @project.deployments.completed.each do |deployment| %>
+        <% @project.completed_deployments.each do |deployment| %>
           <li><%= link_to deployment.name , deployment %>
           </li>
         <% end %>

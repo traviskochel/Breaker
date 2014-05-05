@@ -1,0 +1,21 @@
+<li id="task-<%= task.id %>" class='priority-<%= task.scenario.priority %> <%= "completed" if task.completed %> clearfix'>
+  <div class="float-left">
+    <%= simple_form_for(task, :remote => true ) do |f| %>
+      <%= f.input :completed, input_html: {class: 'submit-on-change'}, label: false, wrapper_class: 'inline-block'  %> 
+
+      <%= link_to task.scenario.name, task %> 
+      
+      <span class="edited-by gray">
+        <%= render 'tasks/task_author', task: task %>
+      </span>
+
+    <% end %> 
+    
+    <% if task.comments.count > 0 %>
+      <%= link_to pluralize(task.comments.count, 'comments'), task %>
+    <% end %>
+  </div>
+  <div class="float-right priority-indicator">
+    <%= task.scenario.priority %>
+  </div>
+</li>

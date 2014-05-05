@@ -11,6 +11,7 @@
     <%= f.input :password_confirmation, required: true %>
     
     <% if current_admin? %>
+      <%= f.input :approved, label: 'Beta User' %>
       <%= f.input :admin %>
     <% end %>
 

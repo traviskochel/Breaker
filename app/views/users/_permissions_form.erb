@@ -1,0 +1,4 @@
+<%= simple_form_for(user, :remote => true, html: {class: 'inline'} ) do |f| %>
+  <%= f.input :admin, input_html: {class: 'submit-on-change'}, wrapper_class: 'inline-block'  %> 
+  <%= f.input :beta, input_html: {class: 'submit-on-change'}, wrapper_class: 'inline-block' %>
+<% end %>

@@ -18,6 +18,7 @@
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
 
     <% if current_admin? %>
+      <%= f.input :beta, label: 'Beta User' %>
       <%= f.input :admin %>
     <% end %>
   </div>

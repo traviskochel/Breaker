@@ -2,11 +2,12 @@
 
 <h1>Editing <%= @project.name %></h1>
 
-<section class="grid-2 story-details border">
+<section class="project-details border">
+  <h2>Project Details</h2>
   <%= render 'form' %>
 </section>
 
-<section class="grid-10 last border">
+<section class="border">
   <h2>Tests</h2>
   
   <%= render 'groups/form' %>

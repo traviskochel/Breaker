@@ -63,9 +63,10 @@ class ScenariosController < ApplicationController
   # DELETE /scenarios/1
   # DELETE /scenarios/1.json
   def destroy
+    project = @scenario.project
     @scenario.destroy
     respond_to do |format|
-      format.html { redirect_to scenarios_url }
+      format.html { redirect_to edit_project_path(project) }
       format.json { head :no_content }
     end
   end

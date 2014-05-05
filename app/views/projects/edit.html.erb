@@ -19,7 +19,7 @@
         <ul class='ruled'>
           <% group.scenarios.order('created_at ASC').each do |scenario| %>
             <li class='priority-<%= scenario.priority %> clearfix'>
-              <%= link_to scenario.name, edit_scenario_path(scenario) %>               
+              <%= link_to scenario.name, edit_scenario_path(scenario) %>   <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, scenario, method: :delete, data: { confirm: 'Are you sure?' }, class: 'box transparent'  %>            
             </li>
           <% end %>
 

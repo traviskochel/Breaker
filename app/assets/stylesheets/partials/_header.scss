@@ -8,14 +8,18 @@ header {
     font-weight: bold;
   }
 
+  ul  {
+    margin: .5em 0;
+  }
+
 }
 
 .breadcrumb-wrap { 
   clear: both;
   background-color: $color-gray-9;
-
+  color: $color-gray-4;
   .breadcrumbs {
-    padding: .2em 0;
+    padding: .5em 0;
   }
 }
 

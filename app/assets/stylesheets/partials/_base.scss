@@ -37,12 +37,12 @@ ul, ol {
 
   &.ruled {
     padding: 0;
-    border-top: 1px solid $color-gray-8;
+    border-top: 1px solid $color-gray-10;
 
     li {
 
-      padding: 1em 0; 
-      border-bottom: 1px solid $color-gray-8;
+      padding: .5em 0; 
+      border-bottom: 1px solid $color-gray-10;
       list-style: none;
       
       &:hover.highlight-hover {
@@ -50,6 +50,8 @@ ul, ol {
       }
 
       &.last{
+        float: none;
+        width: auto;
         border-bottom:none;
       }
 
@@ -101,26 +103,26 @@ ol {
 
 section, .section {
   @include clearfix;
-  padding-top: 1.75em;
-  margin-bottom: 1.75em;
+  padding-top: .5em;
+  margin-bottom: 2em;
   
   &.border {
-    border-top: 3px solid $color-gray-8;
+    border-top: 3px solid $color-dark;
     
     &.compact {
-      border-top: 1px solid $color-gray-8;
+      border-top: 1px solid $color-dark;
     }
   }
 
   &.border-thin {
-    border-top: 1px solid $color-gray-8;
+    border-top: 1px solid $color-dark;
   }
 
 
   &.compact, .compact & {
-    padding-top: 1.5em;
+    padding-top: 0;
     //padding-bottom: 1.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 2.5em;
 
     &.no-bottom-margin {
       margin-bottom: 0;

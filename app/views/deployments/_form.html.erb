@@ -1,14 +1,7 @@
 <%= simple_form_for(@deployment) do |f| %>
   <%= f.error_notification %>
-
-  <div class="half-wrap clearfix">
-    <div class="form-inputs half">
-      <%= f.input :name, placeholder: 'New Deployment', label_html: {class: 'accessibility'} %>
-      <%= f.input :project_id, as: :hidden %>
-    </div>
-
-    <div class="form-actions half last">
-      <%= link_to '<i class="fa fa-arrow-right"></i>'.html_safe, '#', class: 'submit btn'  %>
-    </div>
+  <div class="form-inputs">
+    <%= f.input :name, placeholder: '+ New Deployment From Testing Template', label_html: {class: 'accessibility'}, input_html: {class: 'final-enter transparent'} %>
+    <%= f.input :project_id, as: :hidden %>
   </div>
 <% end %>

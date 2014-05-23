@@ -7,7 +7,7 @@
 
 main {
   @include clearfix;
-  padding-top: 2.5em;
+  padding-top: 4em;
   padding-bottom: 4em;
 
   &.full-bleed {
@@ -70,6 +70,7 @@ main {
 }
 .inline-block {
   @include inline-block;
+  vertical-align: baseline;
 }
 
 
@@ -95,6 +96,23 @@ main {
 .padded {
   @include box-sizing(border-box);
   padding: 1em;
+}
+
+.padded-left {
+  @include box-sizing(border-box);
+  padding-left: 1em;
+}
+.padded-right {
+  @include box-sizing(border-box);
+  padding-right: 1em;
+}
+.padded-top {
+  @include box-sizing(border-box);
+  padding-top: 1em;
+}
+.padded-bottom {
+  @include box-sizing(border-box);
+  padding-bottom: 1em;
 }
 
 .padded-double {

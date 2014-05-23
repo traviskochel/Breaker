@@ -1,5 +1,5 @@
 <header class='clearfix'>
-  <div class="container color-reversed">
+  <div class="padded-left padded-right color-reversed clearfix">
     <nav>
       <ul class='list-inline grid-8'>
         <li><%= link_to 'Breaker', root_url, class: 'logo'  %></li>
@@ -23,7 +23,7 @@
       <% end %>
     </ul>
   </div>
-  <div class="breadcrumb-wrap clearfix">
-    <%= breadcrumbs separator: " &rsaquo; ", class: 'container breadcrumbs' %>
+  <div class="breadcrumb-wrap clearfix padded-left padded-right ">
+    <%= breadcrumbs separator: " &rsaquo; ", class: 'breadcrumbs' %>
   </div>
 </header>

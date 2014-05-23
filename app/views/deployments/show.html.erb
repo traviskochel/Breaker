@@ -1,13 +1,10 @@
 <% breadcrumb :deployment, @deployment %>
 
-<section class='top'>
-  <h1>Deployment: <%= @deployment.name %></h1>
-</section>
-<section class="border task-list">
+<div class="task-list">
   <% @task_groups.each do |group_id, tasks| %>
-    <section class="compact">
-      <h5><%= Group.find(group_id).name %></h5>
-      <ul class="ruled group">
+    <section class="border">
+      <h2><%= Group.find(group_id).name %></h2>
+      <ul class="ruled group font-big">
         <% tasks.each do |task| %>
           <%= render 'tasks/task', task: task %>
         <% end %>
@@ -15,4 +12,4 @@
     </section>
   <% end %>
 
-</section>
+</div>

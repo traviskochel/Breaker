@@ -27,16 +27,31 @@
     border-color: $color-gray-7;
     background-color: transparent;
   }
+
+  &.transparent {
+    background-color: transparent;
+    border-color: transparent;
+    padding-left:  0;
+    height: auto;
+  }
 }
 
 input,textarea{
   border: 2px solid $color-gray-9;
+
+  &.transparent {
+    padding: 0;
+    border-color: transparent;
+  }
 }
 
 input:focus, textarea:focus{
   outline: none;
   border: 2px solid $color-yellow;
 
+  &.transparent {
+    border-color: transparent;
+  }
   &.btn{
     border: 1px solid transparent;
   }
@@ -99,7 +114,12 @@ input[type="radio"], input[type="checkbox"] {
   margin-right: .5em;
   line-height: 1.3em;
   height: auto; 
-  //opacity: 0;
+
+  width:.8em;
+  height:.8em;
+  zoom: 1.05;
+  vertical-align: baseline;
+
 }
 
 input[type="file"] {
@@ -126,10 +146,11 @@ label {
 
   &.checkbox, &.radio, &.boolean {
     font-weight:normal;
-    font-family: $font-serif;
+    font-family: $font-sans;
     text-transform: none;
     letter-spacing: 0;
     font-size: 1em;
+    margin-bottom: 0;
   }
 
   &.sr-only {

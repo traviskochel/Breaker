@@ -6,13 +6,13 @@
 
       <%= link_to task.scenario.name, task %> 
       
-      <span class="edited-by gray"> 
+      <span class="edited-by font-xsmall"> 
         <%= render 'tasks/task_author', task: task %>
       </span>
 
     <% end %> 
     
     <% if task.comments.count > 0 %>
-      <%= link_to pluralize(task.comments.count, 'comment'), task, class: 'comments-count box'  %>
+      <%= link_to pluralize(task.comments.count, 'comment'), task, class: 'font-xsmall comments-count box'  %>
     <% end %>
 </li>

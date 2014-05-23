@@ -1,35 +1,40 @@
 <% breadcrumb :project_edit, @project %>
 
-<h1>Editing <%= @project.name %></h1>
-
-<section class="project-details border">
-  <h2>Project Details</h2>
-  <%= render 'form' %>
-</section>
-
-<section class="border">
-  <h2>Tests</h2>
+<section>
+  <h1>Edit Template</h1>
   
-  <%= render 'groups/form' %>
+  <section class="border">
+    <div class="font-big padded-top padded-bottom">
+      <%= render 'groups/form' %>
+    </div>
+    
+  </section>
+  
   
   <div class="groups clear-both">
     
     <% @project.groups.order('LOWER(name) ASC').each do |group| %>
-      <section class='group'>
-        <h5><%= link_to group.name , edit_group_path(group)  %></h5>
-        <ul class='ruled'>
+      <section class='border group'>
+        <h2><%= link_to group.name , edit_group_path(group)  %></h2>
+        <ul class='ruled font-big'>
           <% group.scenarios.order('created_at ASC').each do |scenario| %>
             <li class='priority-<%= scenario.priority %> clearfix'>
               <%= link_to scenario.name, edit_scenario_path(scenario) %>   <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, scenario, method: :delete, data: { confirm: 'Are you sure?' }, class: 'box transparent'  %>            
             </li>
           <% end %>
 
-          <li><%= render 'scenarios/form_compact', g_id: group.id %></li>
+          <li class='last'><%= render 'scenarios/form_compact', g_id: group.id %></li>
         </ul>
       </section>
     <% end %>
   </div>
   
+</section>
+
+
+<section class="project-details border">
+  <h2>Project Details</h2>
+  <%= render 'form' %>
 </section>
 
 

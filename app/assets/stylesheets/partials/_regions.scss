@@ -10,6 +10,11 @@
   }
 
   &.completed {
+    color: $color-gray-8;
+
+    a {
+      color: $color-gray-8;
+    }
     .edited-by {
         display: inline;
       }
@@ -20,11 +25,15 @@
   }
 
   .comments-count {
-    background-color: $color-gray-9;
+    border: 1px solid $color-gray-8;
   }
 }
 
-
+.task-detail {
+  .comments-count {
+    display: none;
+  }
+}
 
 
 //------------------------------------------

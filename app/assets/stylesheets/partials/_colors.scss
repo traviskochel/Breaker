@@ -1,7 +1,11 @@
 //colors: color attributes should preferably not be directly attached to any component. For a little more extensibility, secondary classes containing color information can be applied to any element, controlled here, and then chained.
 
 body {
-  color: $color-dark-gray;
+  color: $color-gray-6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-dark;
 }
 
 .red {
@@ -26,15 +30,15 @@ body {
 
 
 a, .color-reversed .color-normal a {
-  color: $color-gray-4;
+  color: $color-dark;
   text-decoration: none;
 
   &:hover {
-    color: $color-dark;
+    color: $color-gray-4;
   }
 
   &:active {
-    color: $color-dark;
+    color: $color-gray-8;
   }
 
   &.yellow {

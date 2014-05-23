@@ -1,40 +1,46 @@
 <% breadcrumb :project, @project %>
-    
-    <h1 class='inline-block'>
-      <%= @project.name %> 
-    </h1>
 
-    <%= link_to 'Edit Tests <i class="fa fa-cog"></i>'.html_safe , edit_project_path, class: 'btn small upper-right-corner absolute-corner'  %>
+  <% if @project.scenarios.count > 0 || @project.deployments.count > 0 %>
+
+    <section class='compact'>
+      <p><em>You have <%= pluralize @project.scenarios.count, 'test' %>  in your <%= link_to 'template' , edit_project_path %></em> </p>
+    </section>
 
 
     <section class=' border'>
       <h2>Deployments</h2>
-      <ul class="ruled">
+      <ul class="ruled font-big">
         <% @project.open_deployments.each do |deployment| %>
-          <li class='clearfix'>
+          <li class='clearfix hover-parent'>
             <div class="name float-left"> 
-              <%= link_to deployment.name , deployment %>  <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, deployment, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to deployment.name , deployment %>  <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, deployment, class: 'show-on-hover inline', method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
-            <div class="task-count float-right">
+            <div class="task-count float-right font-xsmall">
               <em><%= deployment.tasks.completed.count %> / <%= deployment.tasks.count %> tests</em>
             </div>
           </li>
         <% end %>
-          <li><%= render 'deployments/form' %></li>
+          <li class='last'><%= render 'deployments/form' %></li>
       </ul>
     </section>
     
-    <section class='border'>
-      <h2>Completed</h2>
-      <ul class="ruled">
-        <% @project.completed_deployments.each do |deployment| %>
-          <li><%= link_to deployment.name , deployment %>
-          </li>
-        <% end %>
-      </ul>
-    </section>
+    <% if @project.completed_deployments.count > 0 %>
+      <section class='border'>
+        <h2>Completed</h2>
+        <ul class="ruled font-big">
+          <% @project.completed_deployments.each do |deployment| %>
+            <li class='completed'><%= link_to deployment.name , deployment %>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+    <% end %>
+  <% else %>
     
+    <section class="border">
+      <p><%= link_to 'Add some tests' , edit_project_path %> to your template in order to create a deployment. </p>
+    </section>
 
-
+  <% end %>
 
 

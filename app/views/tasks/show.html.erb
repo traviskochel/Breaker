@@ -1,31 +1,35 @@
 <% breadcrumb :task, @task %>
 
-<section>
-  <%= render 'tasks/task', :task => @task %>
-</section>
-<section class="border">
-  <h2>Comments</h2>
+<div class="task-detail">
 
-  <% if @comments.count > 0 %>`
-    <ul class='ruled'>
-      <% @comments.each do |comment|  %>
-        <li class='comment clearfix'>
-          <div class="grid-3">
-            <p>
-              <strong><%= comment.user.name %></strong>  <br> 
-              <em><%= time_ago_in_words(comment.created_at) %> ago</em> <br>
-              <%= link_to 'Edit', edit_comment_path(comment) %> <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </p>
-          </div>
-          <div class="grid-6 last">
-            <%= comment.message %> 
-          </div>
-          
+  <section>
+    <div class="font-big"><%= render 'tasks/task', :task => @task %>
+      </div> 
+  </section>
+  <section class="border">
+    <h2>Comments</h2>
 
-          </li>
-      <% end %>
-    </ul>
-  <% end %>
+    <% if @comments.count > 0 %>
+      <ul class='ruled'>
+        <% @comments.each do |comment|  %>
+          <li class='comment clearfix'>
+            <div class="grid-3">
+              <p>
+                <strong><%= comment.user.name %></strong>  <br> 
+                <em><%= time_ago_in_words(comment.created_at) %> ago</em> 
+              </p>
+            </div>
+            <div class="grid-6 last">
+              <%= comment.message %> 
+            </div>
+            
 
-  <%= render 'comments/form' %>
-</section>
+            </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= render 'comments/form' %>
+  </section>
+
+</div>
